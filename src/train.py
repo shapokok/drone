@@ -47,8 +47,13 @@ def load_processed(processed_dir):
     gt_pos = np.load(processed_dir / "gt_pos.npy")
 
     gps_held, _native_mask = resample_gps_to_grid(t_imu, t_gps, gps_pos)
-    gt_idx = np.searchsorted(t_gt, t_imu).clip(max=len(t_gt) - 1)
-    gt_on_grid = gt_pos[gt_idx]
+    # Ground truth (~1 Hz on the real dataset) is SPARSER than the IMU
+    # grid (~10 Hz), not denser -- nearest-hold would train the model
+    # against a staircase target. The true trajectory is smooth between
+    # fixes, so linear interpolation is the honest choice here.
+    gt_on_grid = np.stack(
+        [np.interp(t_imu, t_gt, gt_pos[:, i]) for i in range(gt_pos.shape[1])], axis=1
+    )
     return imu.astype(np.float32), gps_held.astype(np.float32), gt_on_grid.astype(np.float32)
 
 
