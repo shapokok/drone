@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+
+data/raw/
+data/processed/
+outputs/
+checkpoints/
+predictions/
+*.pt
+*.npy
+
+# keep small tracked CSVs (results summaries) but ignore large local caches
+*.ipynb_checkpoints
