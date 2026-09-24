@@ -38,6 +38,41 @@ def _skew(v):
     return np.array([[0, -z, y], [z, 0, -x], [-y, x, 0]])
 
 
+def _rotation_aligning(a, b):
+    """Minimal rotation R such that R @ a = b, for unit vectors a, b
+    (Rodrigues' formula specialized to vector alignment; degenerate
+    antipodal case handled explicitly since it divides by ~0 otherwise).
+    """
+    a = a / np.linalg.norm(a)
+    b = b / np.linalg.norm(b)
+    v = np.cross(a, b)
+    c = np.dot(a, b)
+    s = np.linalg.norm(v)
+    if s < 1e-8:
+        if c > 0:
+            return np.eye(3)
+        ref = np.array([0.0, 1.0, 0.0]) if abs(a[0]) > 0.9 else np.array([1.0, 0.0, 0.0])
+        axis = np.cross(a, ref)
+        axis = axis / np.linalg.norm(axis)
+        return _so3_exp(axis * np.pi)
+    K = _skew(v)
+    return np.eye(3) + K + K @ K * ((1 - c) / (s ** 2))
+
+
+def gravity_align(accel_samples):
+    """Initial attitude from gravity alone (standard strapdown-INS coarse
+    alignment): a stationary accelerometer reads specific force f ~= g in
+    the body direction that maps to world 'up'. Determines roll & pitch;
+    yaw about the vertical is NOT observable from accelerometer alone --
+    left at the arbitrary reference. This is an inherent limitation of
+    any accel+gyro+GPS-position INS without a magnetometer or course-
+    over-ground fix, not specific to this implementation -- worth stating
+    plainly in the paper rather than hidden.
+    """
+    f0 = np.mean(accel_samples, axis=0)
+    return _rotation_aligning(f0, np.array([0.0, 0.0, 1.0]))
+
+
 def _so3_exp(w):
     """Rodrigues' formula: exponential map from a rotation vector to SO(3).
     Used for BOTH the nominal attitude's kinematic propagation and for
@@ -71,6 +106,9 @@ class StrapdownEKF:
 
     def set_initial_position(self, pos0):
         self.pos = np.array(pos0, dtype=float)
+
+    def set_initial_attitude(self, R0):
+        self.R = np.array(R0, dtype=float)
 
     def predict(self, accel_body, gyro_body, dt):
         """One strapdown mechanization step. accel_body/gyro_body: (3,) raw IMU."""
@@ -139,6 +177,8 @@ def run_ekf(accel, gyro, gps, gps_mask, dt, gps_pos0=None, estimate_bias=True):
     ekf = StrapdownEKF(estimate_bias=estimate_bias)
     first_valid = int(np.argmax(gps_mask)) if gps_mask.any() else 0
     ekf.set_initial_position(gps_pos0 if gps_pos0 is not None else gps[first_valid])
+    n_align = min(10, T)
+    ekf.set_initial_attitude(gravity_align(accel[:n_align]))
 
     out = np.zeros((T, 3))
     for t in range(T):
@@ -191,5 +231,24 @@ if __name__ == "__main__":
         f"(physically implausible for a {T*dt:.0f}s / {np.linalg.norm(true_pos[-1]):.0f}m-scale run)"
     )
 
+    # Today's actual bug: the synthetic test above never modeled a body
+    # frame misaligned from world -- accel_body was built as if R_true=I
+    # the whole time, so it passed even with R initialized to identity
+    # unconditionally. The real dataset's IMU reads z-DOWN when level
+    # (Pixhawk/FRD-ish convention), a ~180 deg initial mismatch identity
+    # can't represent -- reproduce that here with a known, constant,
+    # non-trivial body rotation and confirm gravity_align recovers it.
+    R_true = _so3_exp(np.array([np.pi, 0.0, 0.0]))  # z flips: "down when level"
+    specific_force_world = true_accel_enu  # = a_kinematic - g_world, already computed above
+    accel_body_rot = (specific_force_world @ R_true) + rng.normal(0, 0.02, (T, 3))  # f_body = R^T f_world
+    gyro_body_rot = rng.normal(0, 0.005, (T, 3))
+
+    pred_rot = run_ekf(accel_body_rot, gyro_body_rot, gps, gps_mask, dt, gps_pos0=true_pos[0])
+    ate_rot, _ = absolute_trajectory_error(pred_rot, true_pos, align=False)
+    assert np.isfinite(ate_rot) and ate_rot < 5.0, (
+        f"gravity_align failed to recover a rotated initial attitude, ATE={ate_rot}"
+    )
+
     print(f"ekf ok | ATE={ate:.4f} m (bias-estimating) / {ate_nobias:.4f} m (no-bias ablation) "
-          f"over {T} steps, {gps_mask.sum()} GPS updates | outage-drift={drift:.2f} m")
+          f"over {T} steps, {gps_mask.sum()} GPS updates | outage-drift={drift:.2f} m | "
+          f"rotated-body ATE={ate_rot:.4f} m")
