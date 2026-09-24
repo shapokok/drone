@@ -119,9 +119,19 @@ class FusionTransformer(nn.Module):
                     attn_maps.append(attn)
 
         delta = self.head(h_imu)
-        # residual on top of the last-known (held) GPS position keeps the
-        # regression target small and centered, easier to fit than raw ENU.
-        pos_pred = gps + delta
+        if self.ablation == "imu_only":
+            # No GPS numeric value anywhere in the output, not even as a
+            # residual base -- otherwise this ablation would still see
+            # GPS through the back door and the comparison would be
+            # meaningless (this is exactly what happened before the fix:
+            # imu_only scored identically to full because it was still
+            # just correcting raw GPS).
+            pos_pred = delta
+        else:
+            # residual on top of the last-known (held) GPS position keeps
+            # the regression target small and centered, easier to fit
+            # than raw ENU.
+            pos_pred = gps + delta
         return (pos_pred, attn_maps) if return_attn else pos_pred
 
 
