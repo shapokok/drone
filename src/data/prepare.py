@@ -69,7 +69,11 @@ def inspect(raw_dir):
         raise FileNotFoundError(f"no CSVs found under {raw_dir} -- check the Kaggle input path")
 
     for path in csvs:
-        df = _clean_columns(pd.read_csv(path, nrows=2000))
+        try:
+            df = _clean_columns(pd.read_csv(path, nrows=2000, on_bad_lines="warn"))
+        except (pd.errors.ParserError, UnicodeDecodeError) as e:
+            print(f"\n=== {path.relative_to(raw_dir)} ===\nSKIPPED (malformed): {e}")
+            continue
         print(f"\n=== {path.relative_to(raw_dir)} ===")
         print("columns:", list(df.columns))
         if "Timpstemp" in df.columns and len(df) > 1:
