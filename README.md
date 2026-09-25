@@ -10,12 +10,16 @@ src/
   data/prepare.py        Zurich Urban MAV raw CSVs -> synced npy arrays
   data/dataset.py         windowing, GPS-outage augmentation, temporal split
   baselines/ekf.py         strapdown INS + loosely-coupled EKF baseline
+  baselines/tune_ekf.py     grid-search EKF noise params on val, same
+                              tuning budget the neural models get from
+                              early stopping -- run before evaluate.py
   models/fusion_transformer.py   proposed dual-branch fusion model
   models/fusion_lstm.py           same idea, LSTM backbone (ablation arm)
   metrics.py                ATE / RPE (Umeyama-aligned) / per-axis RMSE
   train.py                    training loop, resume + results.csv logging
   evaluate.py                  outage-rate sweep + metrics over a checkpoint
-  xai.py                        attention-weight extraction for figures
+  xai.py                        branch-ablation probing (causal contribution
+                                  of IMU vs GPS) for Figure 3
   report.py                     builds paper tables/figures from results.csv
 ```
 
@@ -90,6 +94,11 @@ same command skips whatever is already there (`--force` overrides), so a
 * ATE and RPE computed after Umeyama alignment to ground truth (standard
   SLAM/odometry convention) — not raw unaligned RMSE.
 * 5 seeds per configuration, reported as mean ± std.
+* The EKF baseline gets the same tuning budget as the proposed model:
+  its noise parameters are grid-searched on the validation split
+  (`baselines/tune_ekf.py`) rather than left on hand-picked defaults —
+  comparing a tuned model against an untuned baseline is the first
+  thing a reviewer would flag.
 
 ## 4. Kaggle rules that actually matter
 

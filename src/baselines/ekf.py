@@ -161,7 +161,8 @@ class StrapdownEKF:
         return self.pos.copy()
 
 
-def run_ekf(accel, gyro, gps, gps_mask, dt, gps_pos0=None, estimate_bias=True):
+def run_ekf(accel, gyro, gps, gps_mask, dt, gps_pos0=None, estimate_bias=True,
+            q_accel=0.05, q_gyro=0.01, q_bias=1e-6, r_gps=2.0):
     """Run the filter over a full sequence.
 
     accel, gyro: (T, 3) body-frame IMU at the common time grid.
@@ -169,12 +170,18 @@ def run_ekf(accel, gyro, gps, gps_mask, dt, gps_pos0=None, estimate_bias=True):
          (values elsewhere are ignored, e.g. NaN or stale-hold).
     dt: scalar or (T,) timestep(s).
     estimate_bias: False runs the "no bias term" ablation (Table 3).
+    q_accel/q_gyro/q_bias/r_gps: noise parameters -- the shipped defaults
+    are placeholders, not tuned to this sensor. See tune_ekf.py, which
+    grid-searches these on the validation split (same tuning budget the
+    neural models get via early stopping on val loss) and writes the
+    winning combo to ekf_tuned_params.json for evaluate.py to load.
     Returns pred_pos: (T, 3).
     """
     T = len(accel)
     dt_arr = np.full(T, dt) if np.isscalar(dt) else dt
 
-    ekf = StrapdownEKF(estimate_bias=estimate_bias)
+    ekf = StrapdownEKF(estimate_bias=estimate_bias, q_accel=q_accel, q_gyro=q_gyro,
+                        q_bias=q_bias, r_gps=r_gps)
     first_valid = int(np.argmax(gps_mask)) if gps_mask.any() else 0
     ekf.set_initial_position(gps_pos0 if gps_pos0 is not None else gps[first_valid])
     n_align = min(10, T)

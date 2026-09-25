@@ -7,6 +7,7 @@ Appends rows to results.csv and saves per-run trajectories to
 outputs/predictions/ for report.py's Figure 1/2.
 """
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -29,12 +30,28 @@ def outage_rng(outage_rate):
     return np.random.default_rng(int(round(outage_rate * 100000)) + 1)
 
 
-def eval_ekf(imu, gps_held, gt_pos, te, outage_rate, dt, estimate_bias=True):
+def load_tuned_ekf_params(out_dir):
+    """tune_ekf.py's output, if it's been run -- see baselines/tune_ekf.py.
+    Falls back to run_ekf's untuned defaults (with a warning) otherwise,
+    so evaluate.py still works standalone before tuning has happened.
+    """
+    path = Path(out_dir) / "ekf_tuned_params.json"
+    if not path.exists():
+        print(f"WARNING: {path} not found -- run baselines/tune_ekf.py first for a fair "
+              f"comparison (README section 5: baselines get the same tuning budget as the "
+              f"proposed model). Falling back to untuned defaults.")
+        return {}
+    params = json.loads(path.read_text())
+    return {k: params[k] for k in ("q_accel", "q_gyro", "r_gps")}
+
+
+def eval_ekf(imu, gps_held, gt_pos, te, outage_rate, dt, estimate_bias=True, ekf_params=None):
     """imu is (N, 6) = [accel_xyz, gyro_xyz] per prepare.py's load_imu."""
     n = te.stop - te.start
     avail, gps_out = apply_block_outage(n, gps_held[te], target_rate=outage_rate, rng=outage_rng(outage_rate))
     accel, gyro = imu[te, :3], imu[te, 3:]
-    pred = run_ekf(accel, gyro, gps_out, avail, dt, gps_pos0=gt_pos[te][0], estimate_bias=estimate_bias)
+    pred = run_ekf(accel, gyro, gps_out, avail, dt, gps_pos0=gt_pos[te][0], estimate_bias=estimate_bias,
+                    **(ekf_params or {}))
     return pred, gt_pos[te]
 
 
@@ -80,7 +97,6 @@ def main(args):
 
     meta_path = Path(args.processed_dir) / "meta.json"
     if meta_path.exists():
-        import json
         dt = 1.0 / json.loads(meta_path.read_text())["imu_rate_hz"]
 
     if args.model != "ekf":
@@ -88,6 +104,8 @@ def main(args):
                      / f"{args.model}_{args.ablation}_s{args.seed}_outage{args.train_outage_rate}.pt")
         model = build_model(args.model, args.ablation).to(device)
         model.load_state_dict(torch.load(ckpt_path, map_location=device))
+    else:
+        ekf_params = load_tuned_ekf_params(args.out_dir)
 
     pred_dir = Path(args.out_dir) / "predictions"
     pred_dir.mkdir(parents=True, exist_ok=True)
@@ -100,7 +118,7 @@ def main(args):
 
         if args.model == "ekf":
             pred, gt = eval_ekf(imu, gps_held, gt_pos, te, rate, dt,
-                                 estimate_bias=(args.ablation != "no_bias"))
+                                 estimate_bias=(args.ablation != "no_bias"), ekf_params=ekf_params)
         else:
             pred, gt = eval_neural(model, imu, gps_held, gt_pos, te, rate, args.window, device)
 
