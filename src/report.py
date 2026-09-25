@@ -141,26 +141,34 @@ def figure_outage_error_growth(pred_dir, out_dir, tags):
     plt.close(fig)
 
 
-def figure_attention_shift(xai_dir, out_dir):
-    """Fig 3: attention weight on concurrent GPS vs its availability -- the
-    XAI angle, distinct from both accuracy tables.
+def figure_branch_contribution(xai_dir, out_dir):
+    """Fig 3: CAUSAL contribution of each branch -- excess position error
+    when that branch's input is blinded at inference on the same trained
+    checkpoint (occlusion/ablation probing), not raw attention weight.
+    Raw attention on the concurrent GPS token was tried first and gave an
+    uninterpretable result (it rose during outage, contradicting Table 2's
+    evidence that the model's actual robustness comes from the IMU branch)
+    -- attention weight is correlational, not causal. This is the XAI
+    angle, distinct from both accuracy tables.
     """
-    weight = np.load(xai_dir / "attention_weight.npy")
+    imu_contrib = np.load(xai_dir / "imu_contribution.npy")
+    gps_contrib = np.load(xai_dir / "gps_contribution.npy")
     avail = np.load(xai_dir / "gps_availability.npy")
 
     fig, ax = plt.subplots(figsize=(7, 3.5))
-    t = np.arange(len(weight))
-    ax.plot(t, weight, color=CATEGORICAL["fusion_transformer"], lw=1.5,
-            label="Attention on concurrent GPS")
-    ax.fill_between(t, 0, ax.get_ylim()[1] if ax.get_ylim()[1] > 0 else 1,
-                     where=~avail, color=INK_MUTED, alpha=0.15, label="GPS unavailable")
+    t = np.arange(len(imu_contrib))
+    ax.plot(t, imu_contrib, color=CATEGORICAL["imu_only"], lw=1.5, label="Losing the IMU branch")
+    ax.plot(t, gps_contrib, color=CATEGORICAL["gps_only"], lw=1.5, label="Losing the GPS branch")
+    ax.axhline(0, color=INK_MUTED, lw=0.8)
+    ymax = max(float(imu_contrib.max()), float(gps_contrib.max()), 0.1)
+    ax.fill_between(t, 0, ymax, where=~avail, color=INK_MUTED, alpha=0.15, label="GPS unavailable")
     ax.set_xlabel("Timestep")
-    ax.set_ylabel("Attention weight")
-    ax.set_title("Cross-attention reliance shifts to IMU when GPS drops")
+    ax.set_ylabel("Excess position error when blinded (m)")
+    ax.set_title("Causal contribution of each branch (inference-time ablation)")
     ax.grid(True, lw=0.5)
     ax.legend(frameon=False, fontsize=8)
     fig.tight_layout()
-    fig.savefig(out_dir / "fig3_attention_shift.png", dpi=200)
+    fig.savefig(out_dir / "fig3_branch_contribution.png", dpi=200)
     plt.close(fig)
 
 
@@ -239,7 +247,7 @@ def build_figures(df, pred_dir, out_dir, fig_dir):
         print(f"fig2 skipped: {e}")
 
     try:
-        figure_attention_shift(out_dir / "xai", fig_dir)
+        figure_branch_contribution(out_dir / "xai", fig_dir)
         print("fig3 saved")
     except FileNotFoundError as e:
         print(f"fig3 skipped: {e}")
