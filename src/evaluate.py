@@ -17,17 +17,10 @@ import torch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from baselines.ekf import run_ekf  # noqa: E402
-from data.dataset import apply_block_outage, make_windows, temporal_split  # noqa: E402
+from data.dataset import apply_block_outage, make_windows, outage_rng, temporal_split  # noqa: E402
 from metrics import trajectory_metrics  # noqa: E402
 from models.fusion_transformer import FusionTransformer  # noqa: E402
 from train import append_result, build_model, load_processed, MODELS  # noqa: E402
-
-
-def outage_rng(outage_rate):
-    """Deterministic, shared across models: same injected outage blocks
-    whichever model is being evaluated at this rate.
-    """
-    return np.random.default_rng(int(round(outage_rate * 100000)) + 1)
 
 
 def load_tuned_ekf_params(out_dir):

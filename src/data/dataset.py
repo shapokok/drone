@@ -7,6 +7,14 @@ import torch
 from torch.utils.data import Dataset
 
 
+def outage_rng(outage_rate):
+    """Deterministic, shared across models/figures: the same injected
+    outage blocks whichever model (or which report.py figure) is using
+    this outage_rate, so comparisons stay apples-to-apples.
+    """
+    return np.random.default_rng(int(round(outage_rate * 100000)) + 1)
+
+
 def resample_gps_to_grid(t_imu, t_gps, gps_pos):
     """Hold-last-value resample of low-rate GPS onto the high-rate IMU
     timeline. Returns (gps_held (N,3), native_mask (N,) bool), where

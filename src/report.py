@@ -7,6 +7,7 @@ hue order, never cycled): EKF=blue, FusionTransformer=orange,
 FusionLSTM=aqua, ablation arms=yellow/magenta/violet in a fixed order.
 """
 import argparse
+import sys
 from pathlib import Path
 
 import matplotlib
@@ -14,6 +15,9 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from data.dataset import apply_block_outage, outage_rng  # noqa: E402
 
 CATEGORICAL = {
     "ekf": "#2a78d6",                 # slot 1 blue -- classical baseline
@@ -120,20 +124,50 @@ def figure_trajectory_overlay(pred_dir, out_dir, tag_gt, tags_pred):
     plt.close(fig)
 
 
-def figure_outage_error_growth(pred_dir, out_dir, tags):
-    """Fig 2: error growth WITHIN a single sustained outage (time-since-loss
-    axis) -- distinct from Table 2's across-outage-rate axis.
+def find_longest_outage_segment(avail, margin=15):
+    """Longest contiguous False-run in a GPS-availability mask, padded
+    with `margin` samples of context on each side. Returns (slice,
+    onset_index_within_slice).
     """
+    padded = np.concatenate(([True], avail, [True])).astype(int)
+    edges = np.diff(padded)
+    starts = np.where(edges == -1)[0]
+    ends = np.where(edges == 1)[0]
+    i = np.argmax(ends - starts)
+    start, end = int(starts[i]), int(ends[i])
+    lo, hi = max(0, start - margin), min(len(avail), end + margin)
+    return slice(lo, hi), start - lo
+
+
+def figure_outage_error_growth(pred_dir, out_dir, tags, outage_rate=0.3, dt=1.0, margin=15):
+    """Fig 2: error growth within ONE representative long GPS-outage
+    episode, time axis in seconds since loss -- distinct from Table 2's
+    across-outage-rate axis (which aggregates over the whole test set
+    and every outage episode in it, not a single one).
+
+    The outage mask isn't saved alongside predictions -- it's
+    regenerated here with the same (n, outage_rate) -> outage_rng seed
+    evaluate.py used, which is deterministic by construction (see
+    data/dataset.py's outage_rng), so this reproduces the exact mask
+    without needing extra saved files.
+    """
+    first_pred = np.load(pred_dir / f"{tags[0][1]}_pred.npy")
+    n = len(first_pred)
+    avail, _ = apply_block_outage(n, np.zeros((n, 3)), target_rate=outage_rate,
+                                   rng=outage_rng(outage_rate))
+    sl, onset = find_longest_outage_segment(avail, margin=margin)
+
     fig, ax = plt.subplots(figsize=(6, 4))
     for label, tag, color in tags:
         pred = np.load(pred_dir / f"{tag}_pred.npy")
         gt = np.load(pred_dir / f"{tag}_gt.npy")
-        n = min(len(pred), len(gt))
-        err = np.linalg.norm(pred[:n] - gt[:n], axis=1)
-        ax.plot(np.arange(n), err, color=color, lw=1.5, label=label)
-    ax.set_xlabel("Timestep since outage start")
+        err = np.linalg.norm(pred[sl] - gt[sl], axis=1)
+        t_seconds = (np.arange(len(err)) - onset) * dt
+        ax.plot(t_seconds, err, color=color, lw=1.5, label=label)
+    ax.axvline(0, color=INK_MUTED, lw=1.0, linestyle="--")
+    ax.set_xlabel("Seconds since GPS loss")
     ax.set_ylabel("Position error (m)")
-    ax.set_title("Error growth during a sustained GPS outage")
+    ax.set_title("Error growth during one representative GPS outage episode")
     ax.grid(True, lw=0.5)
     ax.legend(frameon=False, fontsize=8)
     fig.tight_layout()
@@ -196,7 +230,7 @@ def figure_ate_distribution(df, out_dir):
     plt.close(fig)
 
 
-def build_all(results_csv, out_dir, pred_dir):
+def build_all(results_csv, out_dir, pred_dir, processed_dir="data/processed"):
     out_dir = Path(out_dir)
     fig_dir = out_dir / "figures"
     fig_dir.mkdir(parents=True, exist_ok=True)
@@ -213,15 +247,23 @@ def build_all(results_csv, out_dir, pred_dir):
         t.to_csv(out_dir / f"{name}.csv")
         print(f"\n=== {name} ===\n{t}")
 
-    build_figures(df, Path(pred_dir), out_dir, fig_dir)
+    build_figures(df, Path(pred_dir), out_dir, fig_dir, processed_dir=processed_dir)
     return tables
 
 
-def build_figures(df, pred_dir, out_dir, fig_dir):
+def build_figures(df, pred_dir, out_dir, fig_dir, processed_dir="data/processed"):
     """Best-effort: each figure is skipped (not failed) with a printed
     reason if the predictions/xai artifacts it needs aren't present yet
     (e.g. a partial sweep) -- doesn't block the tables from being built.
     """
+    dt = 1.0
+    meta_path = Path(processed_dir) / "meta.json"
+    if meta_path.exists():
+        import json
+        dt = 1.0 / json.loads(meta_path.read_text())["imu_rate_hz"]
+    else:
+        print(f"fig2: {meta_path} not found, x-axis will be in raw timesteps not seconds")
+
     seed0_full_evaloutage0 = "s0_trainoutage0.0_evaloutage0.0"
     try:
         tags = [
@@ -241,7 +283,7 @@ def build_figures(df, pred_dir, out_dir, fig_dir):
             (label_for("fusion_transformer", "full"),
              f"fusion_transformer_full_{seed0_evaloutage3}", CATEGORICAL["fusion_transformer"]),
         ]
-        figure_outage_error_growth(pred_dir, fig_dir, tags)
+        figure_outage_error_growth(pred_dir, fig_dir, tags, dt=dt)
         print("fig2 saved")
     except FileNotFoundError as e:
         print(f"fig2 skipped: {e}")
@@ -266,5 +308,6 @@ if __name__ == "__main__":
     ap.add_argument("--results_csv", default="outputs/results.csv")
     ap.add_argument("--out_dir", default="outputs")
     ap.add_argument("--pred_dir", default="outputs/predictions")
+    ap.add_argument("--processed_dir", default="data/processed")
     args = ap.parse_args()
-    build_all(args.results_csv, args.out_dir, args.pred_dir)
+    build_all(args.results_csv, args.out_dir, args.pred_dir, args.processed_dir)
