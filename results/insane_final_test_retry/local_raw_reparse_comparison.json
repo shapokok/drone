@@ -1,0 +1,29 @@
+{
+  "scope": "post-download local reparse only, not preflight or inference",
+  "local_numpy": "2.0.2",
+  "local_pandas": "2.2.2",
+  "flights": [
+    {
+      "flight": "mars_6",
+      "raw_file_sha256_matches_lock": true,
+      "native_timestamps_bitwise_equal": true,
+      "native_gt_positions_bitwise_equal": false,
+      "max_position_difference_m": 2.2737367544323206e-13,
+      "different_coordinate_values": 249,
+      "coordinate_values": 1176
+    },
+    {
+      "flight": "mars_7",
+      "raw_file_sha256_matches_lock": true,
+      "native_timestamps_bitwise_equal": true,
+      "native_gt_positions_bitwise_equal": false,
+      "max_position_difference_m": 2.2737367544323206e-13,
+      "different_coordinate_values": 227,
+      "coordinate_values": 1179
+    }
+  ],
+  "remote_raw_verification": true,
+  "scientific_verifier_modified": false,
+  "data_or_metrics_modified": false,
+  "note": "Strict local CSV reparse equality failed at sub-picometre GT-coordinate differences. Kaggle exact raw checks passed. Local independent metrics will be recomputed from saved authoritative prediction/GT arrays without reparsing coordinates; timestamp and raw SHA checks remain exact."
+}

@@ -1,0 +1,21 @@
+{
+  "train": [
+    "mars_1",
+    "mars_2",
+    "mars_3"
+  ],
+  "validation": [
+    "mars_4",
+    "mars_5"
+  ],
+  "test_reserved": [
+    "mars_6",
+    "mars_7"
+  ],
+  "loader_smoke_only": [
+    "outdoor_1"
+  ],
+  "rule": "numerical flight order; distinct recordings; selection by availability/duration only",
+  "test_policy": "hash/schema/timing inventory only; no metrics, scalers, initialization, or training",
+  "same_campaign_warning": "separate flights from same campaign/vehicle, not independent sites"
+}

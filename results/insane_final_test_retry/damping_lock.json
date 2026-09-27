@@ -1,0 +1,27 @@
+{
+  "tau_s": 5.0,
+  "selected_on": "train only",
+  "flights": [
+    "mars_1",
+    "mars_2",
+    "mars_3"
+  ],
+  "episodes": 540,
+  "validation_metrics_computed_before_lock": false,
+  "selected_utc": "2026-09-26T22:46:44.087082+00:00",
+  "rule": {
+    "rule": "v(age) = v_CV * exp(-age/tau), age since last legal fix; exact integral",
+    "tau_candidates_s": [
+      1,
+      2,
+      5,
+      10,
+      20,
+      30,
+      60,
+      120
+    ],
+    "selection": "minimum macro relative-motion RMSE across all 540 frozen train episodes; smaller tau on ties; before any validation metric"
+  },
+  "episode_ids_sha256": "a9af52ad841f72a859122c56ac73b2ca30634d1210aa3d1a8f0bbea1419cfc8c"
+}

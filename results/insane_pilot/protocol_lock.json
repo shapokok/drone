@@ -1,0 +1,14 @@
+{
+  "pilot_id": "fusionnav_insane_pilot_v1",
+  "sha256": {
+    "download_manifest.json": "6723a6bdfc90f5ce608be5cba030509d58a694b976f8b2e675d6f9250b1c029a",
+    "outages.json": "208ef71a355441c2f795155b448cc29626bca974ecb506960c74757fc07eb474",
+    "splits.json": "a2f27d70ec0bae01dd7eb5dabf94994dbedd48898f72b293823549867fa075f4",
+    "training_episodes.json": "84b85d23a0006c2039ec6ee3cb2002a02e11faa1a61e140dde24a95d74e442dd",
+    "scaler_preflight.json": "7549771e7428907e5a89039540b08e007b7aeb37023ccd6d92cd4d37b94ab6dd",
+    "pilot.json": "4718d7a7415e89a5ccffe91bcb202db655174113d86186a328761c43de4c1a24",
+    "inventory.json": "f370ecb2063be698d8a2397c5f713afa787c3d40110fba4302e4dfaba20d8918"
+  },
+  "freeze_stage": "before any training/validation metric",
+  "model_comparisons_used_for_selection": false
+}

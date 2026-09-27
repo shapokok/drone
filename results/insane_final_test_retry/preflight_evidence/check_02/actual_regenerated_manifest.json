@@ -1,0 +1,152 @@
+{
+  "split": "test",
+  "selection": "unchanged chronological/support-only validation algorithm, onset stride 60s; no motion/error selection",
+  "scenarios": [
+    {
+      "id": "mars_6_e1_d10",
+      "flight": "mars_6",
+      "split": "test",
+      "duration_s": 10,
+      "onset_s": 20.36518530845642,
+      "start_s": 0.3651853084564216,
+      "end_s": 40.36518530845642,
+      "n_native_gt_outage": 43,
+      "n_native_gt_total": 169,
+      "token_mask_sha256": "54d1f8b7a9217c3e8206fec44aa90fc97fdb3e89370798f9369d21bcb530fdd3",
+      "native_gt_timestamp_sha256": "287b864ad75be96c77744de7614ea9b871ce6b6e093ce882b22248c98b1500ff"
+    },
+    {
+      "id": "mars_6_e1_d30",
+      "flight": "mars_6",
+      "split": "test",
+      "duration_s": 30,
+      "onset_s": 20.36518530845642,
+      "start_s": 0.3651853084564216,
+      "end_s": 60.36518530845642,
+      "n_native_gt_outage": 127,
+      "n_native_gt_total": 254,
+      "token_mask_sha256": "ec337caf619f2fc34accfde4fefc63f5f100805a2dc4a30b788f58ddce2c4bc8",
+      "native_gt_timestamp_sha256": "fee0921e53c3474d447cab7fd509115cb8323927bc1f8ce63188b7eaf5cebb49"
+    },
+    {
+      "id": "mars_6_e1_d60",
+      "flight": "mars_6",
+      "split": "test",
+      "duration_s": 60,
+      "onset_s": 20.36518530845642,
+      "start_s": 0.3651853084564216,
+      "end_s": 90.36518530845642,
+      "n_native_gt_outage": 258,
+      "n_native_gt_total": 385,
+      "token_mask_sha256": "71da0041c5ffc52dc55131d6c02ef9fd40886bf07a3990e099fe3e7675dd9bab",
+      "native_gt_timestamp_sha256": "57d957d5551036872cc895b01321ddd2758b775c1c3a32a2931053b4cb90c876"
+    },
+    {
+      "id": "mars_6_control",
+      "flight": "mars_6",
+      "split": "test",
+      "duration_s": 0,
+      "onset_s": null,
+      "start_s": 0.3471468448638916,
+      "end_s": 92.14706435203553,
+      "n_native_gt_outage": 0,
+      "n_native_gt_total": 392,
+      "token_mask_sha256": "6d5972681de3907712444af42c33041978b13b18abe51cd1a72c312247dc868b",
+      "native_gt_timestamp_sha256": "d7d10e803578aa34d0e6d46f72c147a29d2b16400e99268628362fbd72fb3523"
+    },
+    {
+      "id": "mars_7_e1_d10",
+      "flight": "mars_7",
+      "split": "test",
+      "duration_s": 10,
+      "onset_s": 21.3,
+      "start_s": 1.3000000000000007,
+      "end_s": 41.3,
+      "n_native_gt_outage": 47,
+      "n_native_gt_total": 168,
+      "token_mask_sha256": "860d531b40010f5a1ce4a6d8d4c9b3f3cb34a9b01d0a5e57422ce1faf23b77a3",
+      "native_gt_timestamp_sha256": "a341cefc3e2ff21c68cf1b3859efbd75411777dc83945b35714414ef423cc48c"
+    },
+    {
+      "id": "mars_7_e1_d30",
+      "flight": "mars_7",
+      "split": "test",
+      "duration_s": 30,
+      "onset_s": 21.3,
+      "start_s": 1.3000000000000007,
+      "end_s": 61.3,
+      "n_native_gt_outage": 122,
+      "n_native_gt_total": 245,
+      "token_mask_sha256": "b34423e399ec53c009571b199c4b245f2f0d58ef83150e9bf0611fa732314343",
+      "native_gt_timestamp_sha256": "3b309a2ef40ab58563a5fb4ac82344c0589175582d04c1e62ebc454629053c74"
+    },
+    {
+      "id": "mars_7_e1_d60",
+      "flight": "mars_7",
+      "split": "test",
+      "duration_s": 60,
+      "onset_s": 21.3,
+      "start_s": 1.3000000000000007,
+      "end_s": 91.3,
+      "n_native_gt_outage": 241,
+      "n_native_gt_total": 367,
+      "token_mask_sha256": "e035746f80e7766b226b248bb77569a89faefc8153e5a1e753c158bedf583bfc",
+      "native_gt_timestamp_sha256": "d9b0a327f275f2b564c94cf60638ed60df9e357433d214de92272a789f5c8f00"
+    },
+    {
+      "id": "mars_7_control",
+      "flight": "mars_7",
+      "split": "test",
+      "duration_s": 0,
+      "onset_s": null,
+      "start_s": 1.2591477394104005,
+      "end_s": 99.0590633392334,
+      "n_native_gt_outage": 0,
+      "n_native_gt_total": 393,
+      "token_mask_sha256": "c0a038f953d65fbf931a77b51cf7598e84a15875159aa36ee91826ffb95ecf49",
+      "native_gt_timestamp_sha256": "69e3fb5bcd5ff9b7a254ea5393aabf9b86394cab401bd4a330093e61c9090836"
+    }
+  ],
+  "unsupported": [],
+  "inventory": {
+    "mars_6": {
+      "epoch_unix_s": 1633612860.6543448,
+      "origin_enu_m": [
+        -777.3852722076814,
+        -488.1414545898579,
+        13.618487086417868
+      ],
+      "segments_s": [
+        [
+          0.2471468448638916,
+          92.24706435203552
+        ]
+      ],
+      "projection_error_m": 1.1160175006352802e-09,
+      "imu_n": 18331,
+      "gps_n": 461,
+      "gt_n": 395,
+      "token_n": 1847
+    },
+    "mars_7": {
+      "epoch_unix_s": 1633615405.3179162,
+      "origin_enu_m": [
+        -775.1125347079229,
+        -488.5631676227523,
+        16.688684311765304
+      ],
+      "segments_s": [
+        [
+          1.1591477394104004,
+          99.1590633392334
+        ]
+      ],
+      "projection_error_m": 1.116038816917353e-09,
+      "imu_n": 19562,
+      "gps_n": 491,
+      "gt_n": 396,
+      "token_n": 2024
+    }
+  },
+  "predictions_or_metrics_computed": false
+}

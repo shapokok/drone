@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "prediction_files": 99,
+  "summary_rows": 99,
+  "paired_rows": 189,
+  "downloaded_hashes_verified": 171,
+  "max_saved_metric_arithmetic_difference": 7.105427357601002e-15,
+  "max_gate_integral_difference_m": 8.282390459868338e-05,
+  "same_point_masks_verified": true,
+  "paired_initial_weights_and_training_order_verified": true,
+  "checkpoint_selection_verified": true,
+  "model_forward_or_training_run": false,
+  "raw_test_files_read": false,
+  "scope": "small arithmetic checks of existing saved outputs; no model evaluation"
+}

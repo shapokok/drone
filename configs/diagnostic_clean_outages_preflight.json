@@ -1,0 +1,121 @@
+{
+  "purpose": "Small read-only preparation checks; no R7 inference, no metrics, no training, no Kaggle job",
+  "r7_output_id": 352644733,
+  "artifacts_verified": 10,
+  "observations": [
+    {
+      "type": "timestamp_source_preflight",
+      "support": {
+        "split": "validation",
+        "original_split_indices_half_open": [
+          18935,
+          21640
+        ],
+        "original_split_n": 2705,
+        "gt_support_s": [
+          7.009129,
+          2720.094776
+        ],
+        "excluded_outside_gt_support_n": 0,
+        "discarded_incomplete_window_n": 17,
+        "common_indices_half_open": [
+          18935,
+          21623
+        ],
+        "common_n": 2688,
+        "window": 192,
+        "stride": 192,
+        "window_count": 14,
+        "common_first_timestamp_s": 1905.752757,
+        "common_last_timestamp_s": 2176.043756
+      },
+      "gps_timestamp_reversals": 6,
+      "selected_future_sources": 0,
+      "selected_source_reversals": 0,
+      "scenarios": [
+        {
+          "scenario_id": "val_control",
+          "rejected_buffered_after_return_n": 0,
+          "new_fix_updates_n": 2686
+        },
+        {
+          "scenario_id": "val_e1_d10s",
+          "rejected_buffered_after_return_n": 0,
+          "new_fix_updates_n": 2586
+        },
+        {
+          "scenario_id": "val_e1_d30s",
+          "rejected_buffered_after_return_n": 1,
+          "new_fix_updates_n": 2385
+        },
+        {
+          "scenario_id": "val_e1_d60s",
+          "rejected_buffered_after_return_n": 1,
+          "new_fix_updates_n": 2085
+        },
+        {
+          "scenario_id": "val_e2_d10s",
+          "rejected_buffered_after_return_n": 1,
+          "new_fix_updates_n": 2585
+        },
+        {
+          "scenario_id": "val_e2_d30s",
+          "rejected_buffered_after_return_n": 1,
+          "new_fix_updates_n": 2385
+        },
+        {
+          "scenario_id": "val_e2_d60s",
+          "rejected_buffered_after_return_n": 0,
+          "new_fix_updates_n": 2086
+        },
+        {
+          "scenario_id": "val_e3_d10s",
+          "rejected_buffered_after_return_n": 1,
+          "new_fix_updates_n": 2585
+        },
+        {
+          "scenario_id": "val_e3_d30s",
+          "rejected_buffered_after_return_n": 0,
+          "new_fix_updates_n": 2386
+        },
+        {
+          "scenario_id": "val_e3_d60s",
+          "rejected_buffered_after_return_n": 0,
+          "new_fix_updates_n": 2086
+        }
+      ],
+      "metrics_computed": false,
+      "inference_performed": false
+    },
+    {
+      "type": "checkpoint_compatibility",
+      "method": "fusion_full",
+      "sha256": "8adacc2e7c16ed7d828ba4d49fab87dda10eeb908026b23f839d974a82a8140f",
+      "strict_state_dict_load": "passed",
+      "parameter_count": 803075,
+      "inference_performed": false
+    },
+    {
+      "type": "checkpoint_compatibility",
+      "method": "fusion_gps_only",
+      "sha256": "f2ad679aa5b797bf882e4e192ed910b1cf329795600960eeaae5ef1122bcd177",
+      "strict_state_dict_load": "passed",
+      "parameter_count": 803075,
+      "inference_performed": false
+    },
+    {
+      "type": "checkpoint_compatibility",
+      "method": "fusion_lstm",
+      "sha256": "e8b47d6109e521f5ddd938867dd91fa1086eb93f590deb7c714047ffe87383a5",
+      "strict_state_dict_load": "passed",
+      "parameter_count": 443779,
+      "inference_performed": false
+    },
+    {
+      "type": "local_environment",
+      "python": "3.9.6",
+      "numpy": "2.0.2",
+      "torch": "2.8.0"
+    }
+  ]
+}

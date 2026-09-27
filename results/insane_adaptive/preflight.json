@@ -1,0 +1,22 @@
+{
+  "status": "pass",
+  "train_flights": [
+    "mars_1",
+    "mars_2",
+    "mars_3"
+  ],
+  "validation_flights": [
+    "mars_4",
+    "mars_5"
+  ],
+  "test_loaded": false,
+  "raw_calibration_hashes_pass": true,
+  "projection_max_m": 2.010843047628441e-09,
+  "validated_training_episodes": 540,
+  "validated_eval_scenarios": 11,
+  "train_only_scaler_pass": true,
+  "all_masks_and_native_gt_timestamp_hashes_pass": true,
+  "adaptive_protocol_lock_pass": true,
+  "planned_trainings": 6,
+  "gate_initial_value": 0.5
+}

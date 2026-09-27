@@ -1,0 +1,19 @@
+{
+  "sha256": {
+    "configs/insane/download_manifest.json": "6723a6bdfc90f5ce608be5cba030509d58a694b976f8b2e675d6f9250b1c029a",
+    "configs/insane/inventory.json": "f370ecb2063be698d8a2397c5f713afa787c3d40110fba4302e4dfaba20d8918",
+    "configs/insane/outages.json": "208ef71a355441c2f795155b448cc29626bca974ecb506960c74757fc07eb474",
+    "configs/insane/pilot.json": "4718d7a7415e89a5ccffe91bcb202db655174113d86186a328761c43de4c1a24",
+    "configs/insane/protocol_lock.json": "e64534f12ce81c092241b1b8ee8c466553175d5484871ece37f4b2f809a73201",
+    "configs/insane/scaler_preflight.json": "7549771e7428907e5a89039540b08e007b7aeb37023ccd6d92cd4d37b94ab6dd",
+    "configs/insane/splits.json": "a2f27d70ec0bae01dd7eb5dabf94994dbedd48898f72b293823549867fa075f4",
+    "configs/insane/training_episodes.json": "84b85d23a0006c2039ec6ee3cb2002a02e11faa1a61e140dde24a95d74e442dd"
+  },
+  "freeze_stage": "before adaptive training or validation metrics",
+  "changes_allowed": [
+    "scalar gate head",
+    "train-selected damped CV",
+    "seeds 0 1 2"
+  ],
+  "adaptive_config_sha256": "fde82dbe224e363979af23c49d8ad2f1f8c36b4f4f724952a0a8481fb107e4b9"
+}

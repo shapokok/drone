@@ -1,0 +1,40 @@
+{
+  "protocol_id": "imu_utility_fixed_v1",
+  "frozen_utc": "2026-09-25T19:03:24.489526+00:00",
+  "primary_method": "dr_zero_bias",
+  "methods": [
+    "constant_velocity_gnss",
+    "dr_zero_bias",
+    "dr_mean_bias",
+    "dr_median_bias",
+    "cv_acceleration_residual",
+    "horizontal_dr_zero_bias"
+  ],
+  "gravity_m_s2": 9.80665,
+  "gravity_history_s": 5.0,
+  "bias_history_s": 5.0,
+  "gnss_velocity_history_s": 5.0,
+  "signal_history_s": 30.0,
+  "yaw_min_horizontal_speed_m_s": 0.5,
+  "yaw_max_course_std_deg": 30.0,
+  "yaw_fallback_deg_east_ccw": 0.0,
+  "yaw_assumption": "body forward aligned with pre-outage GNSS course; unobservable sideslip/body-course angle",
+  "world_frame": "exact saved V2 UTM32N/common GNSS origin, Z up; no new projection",
+  "sensor_frame": "assumed PX4 board FRD, raw exported SI x/y/z; mounting yaw/handedness not independently calibrated",
+  "integration": "strict left-endpoint ZOH IMU, split at raw accel timestamps, actual dt; R_mid exponential and p+=vdt+0.5adt2; no gap clipping",
+  "bias_zero": "ba=bg=0",
+  "bias_mean": "ba=mean(f_pre)-R0.T*[0,0,g]; bg=mean(w_pre); quasi-static pseudo-bias assumption",
+  "bias_median": "ba=componentwise_median(f_pre)-R0.T*[0,0,g]; bg=componentwise_median(w_pre); quasi-static pseudo-bias assumption",
+  "acceleration_residual": "same zero-bias gyro orientation; subtract frozen pre-outage world acceleration R0*mean(f_pre)+g_world from strapdown acceleration",
+  "horizontal_only": "zero-bias DR horizontal acceleration; set world acceleration Z=0; retain initial GNSS vertical velocity",
+  "convention_candidates_preoutage_only": [
+    "gyro_rad_s_positive",
+    "gyro_deg_s_positive",
+    "gyro_rad_s_negative"
+  ],
+  "convention_selection": "primary rad/s positive from PX4 SI export metadata; alternatives only pre-outage consistency, no best-RMSE choice",
+  "test_used": false,
+  "neural_training": false,
+  "kaggle_jobs": false,
+  "forbid_hyperparameter_selection_by_validation": true
+}

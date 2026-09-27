@@ -1,0 +1,35 @@
+{
+  "status": "failed_preflight",
+  "origin": "local classification of downloaded Kaggle error log; remote runner never created status.json",
+  "kernel": "shapok/drone-nav-insane-final-test",
+  "kaggle_version": 1,
+  "output_run_ids": [
+    "353128919"
+  ],
+  "error": "AssertionError: Test scenario/support/hash mismatch",
+  "failure_cell": "In [3] / preflight",
+  "failure_source": "src/insane_final_test/run.py:48",
+  "model_evaluations": 0,
+  "baseline_evaluations": 0,
+  "training_performed": false,
+  "optimizer_steps": 0,
+  "seeds_evaluated": [],
+  "planned_seeds": [
+    0,
+    1,
+    2
+  ],
+  "planned_flights": [
+    "mars_6",
+    "mars_7"
+  ],
+  "test_metrics_available": false,
+  "job_attempts": 1,
+  "retry_started": false,
+  "checks_bypassed": false,
+  "local_unit_tests_passed": 33,
+  "kaggle_unit_tests_executed": false,
+  "scientific_parameters_changed_after_submission": false,
+  "exact_mismatching_manifest_field": "not recorded by remote preflight; unknown",
+  "classified_utc": "2026-09-26T23:29:29.954097+00:00"
+}

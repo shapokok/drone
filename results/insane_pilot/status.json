@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "seed": 0,
+  "test_used": false,
+  "code_version": "cb79659e02d8032173e7c2866f610337fdc1bb2bdcc4bdbfcf3627c9a0ef4106",
+  "started_utc": "2026-09-26T21:48:55.813480+00:00",
+  "run_identity": {
+    "kernel": "shapok/drone-nav-insane-pilot",
+    "version": "see submission receipt"
+  },
+  "models": {
+    "full": {
+      "last_epoch": 11,
+      "best_epoch": 6,
+      "best_validation_criterion_m": 19.274229058806913
+    },
+    "gps_only": {
+      "last_epoch": 9,
+      "best_epoch": 4,
+      "best_validation_criterion_m": 19.43679024180239
+    }
+  },
+  "eskf_status": "not_ready",
+  "evaluation_rows": 55,
+  "finished_utc": "2026-09-26T21:49:05.259525+00:00",
+  "extra_seeds_started": false
+}

@@ -1,5 +1,42 @@
 # Intelligent 3D Drone Navigation (IMU + GNSS fusion)
 
+The latest completed stage is the locked **INSANE adaptive final test** on
+`mars_6` and `mars_7`: Kaggle version 2, run `353132214`. No further training,
+seeds, or test runs are scheduled. The earlier version failed preflight before
+inference; its records are retained separately.
+
+Start with:
+
+- [Final test report](INSANE_FINAL_TEST_REPORT_RETRY.md),
+  [methods](METHODS_DRAFT_FINAL_TEST_RETRY.md), and
+  [results draft](RESULTS_DRAFT_FINAL_TEST_RETRY.md).
+- [Preflight repair and verification](INSANE_PREFLIGHT_FIX_REPORT.md).
+- [Published result tables and provenance](results/README.md).
+- [Adaptive validation report](INSANE_ADAPTIVE_REPORT.md) and
+  [initial INSANE pilot report](INSANE_PILOT_REPORT.md).
+- [Executed final notebook](notebooks/kaggle_insane_final_test_retry.ipynb),
+  [evaluation lock](configs/insane_final_test/FINAL_EVALUATION_LOCK.json), and
+  [separate technical preflight patch](src/insane_final_test_patch/).
+
+On the final test, adaptive full has lower relative-motion RMSE3D than matched
+GPS-only in 17/18 episode-seed pairs, but its seed-mean error is higher than
+Held-GNSS, CV, and Damped-CV on both flights at every outage duration. This does
+not establish an overall advantage over the simple baselines or generalization.
+
+The repository contains source, tests, fixed manifests, notebooks, reports, and
+compact result tables. Raw sensor data, credentials, checkpoints, prediction
+arrays, full local outputs, and handoff archives are excluded from Git. Reports
+retain original local `outputs/...` references; portable copies of selected
+artifacts are indexed in `results/`. Checkpoints and private datasets must be
+obtained separately to reproduce inference. Historical notebooks preserve their
+executed settings and are **not instructions to start another run**.
+
+## Historical Zurich prototype
+
+The documentation below describes the original Zurich implementation. Its
+commands and proposed experiments are historical and do not supersede the
+locked INSANE protocol or the completed-run reports above.
+
 Reference implementation for *Intelligent 3D navigation of drones based on
 inertial and satellite data* — a dual-branch cross-attention fusion
 Transformer for IMU+GPS trajectory estimation, benchmarked against a

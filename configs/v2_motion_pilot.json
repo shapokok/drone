@@ -1,0 +1,71 @@
+{
+  "pilot_id": "fusionnav_v2_causal_motion_pilot_v1",
+  "prepared_only": true,
+  "seed": 0,
+  "raw_dataset": "mrisdal/zurich-urban-micro-aerial-vehicle",
+  "raw_dataset_version": 2,
+  "raw_sha256": {
+    "RawAccel.csv": "2609d0d936c75c7ed2566b258f87c7508faa28848e5cd366f55fbf069e557c11",
+    "RawGyro.csv": "3d39a569265dcc9682fe254c5246a7b7b84c14f338c29a99f25d435d683d7bec",
+    "OnboardGPS.csv": "8e58193ea9ff4e085a61241a66179d46f66110074d59cc1b97a7167fca1181a5",
+    "GroundTruthAGL.csv": "50e95abc70461567a915a76ba17231ae3088b834dbcb433737135eacb9c9c552"
+  },
+  "coordinate_contract": "WGS84 UTM32N for both position streams; same first valid GNSS XYZ origin; z retained as documented metres above MSL for GPS; no fitted alignment",
+  "unresolved_geometry": [
+    "precise GT vertical datum/geoid metadata",
+    "GNSS antenna extrinsic; camera-body offset alone insufficient"
+  ],
+  "primary_evaluation": "relative camera motion from last legal GNSS source timestamp; constant position offsets cancel in label only",
+  "secondary_evaluation": "raw absolute camera-position error, with existing GNSS anchor error; no alignment",
+  "features": "8 IMU features; 10 causal GNSS/time features; no absolute XYZ, absolute flight time, onboard pose, GT input or GT reset",
+  "gnss_epoch_policy": "stable timestamp sort; deduplicate timestamps; coordinate-change events with fix_type>=3 are proxies for physical fixes",
+  "train_stop_index": 18935,
+  "validation_original_indices": [
+    18935,
+    21640
+  ],
+  "validation_common_indices": [
+    18935,
+    21623
+  ],
+  "evaluation_state": "continuous causal recurrent state across entire validation scenario; reset only at scenario start; availability recovery resets position to legal fix",
+  "epochs": 8,
+  "checkpoint_selection": "fixed final epoch; no best-run or best-validation selection",
+  "hidden": 32,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "batch_size": 4,
+  "grad_clip": 1.0,
+  "huber_delta_m": 1.0,
+  "loss": "Huber on integrated relative displacement from native GT interpolation, selected about every real second during outage; no absolute GNSS-to-GT position target",
+  "train_window_samples": 1024,
+  "train_stride_samples": 512,
+  "train_warmup_s": 30,
+  "train_recovery_s": 5,
+  "outage_durations_s": [
+    10,
+    30,
+    60
+  ],
+  "augmentation_seed_rule": "seed + 10000 + epoch; identical windows/masks/order across full and gps_only",
+  "methods": [
+    {
+      "id": "fusion_v2_full",
+      "ablation": "full",
+      "backbone": "gru"
+    },
+    {
+      "id": "fusion_v2_gps_only",
+      "ablation": "gps_only",
+      "backbone": "gru"
+    },
+    {
+      "id": "lstm_v2_full",
+      "ablation": "full",
+      "backbone": "lstm"
+    }
+  ],
+  "go_to_five_seeds": "consistent practically relevant paired improvement versus gps_only on multiple fixed episodes, especially 30/60 s; inspect sensitivity and CV comparison; no mandatory percentage",
+  "execution_authorization": "requires separate user command; notebook RUN_TRAINING defaults False",
+  "train_onset_margin": "reserve two maximum observed sample gaps for onset/recovery snapping"
+}

@@ -1,0 +1,21 @@
+{
+  "status": "pass",
+  "prediction_files": 44,
+  "summary_rows": 55,
+  "max_metric_absolute_difference": 1.4210854715202004e-14,
+  "native_gt_rows_verified": true,
+  "point_masks_equal_across_methods": true,
+  "hidden_gnss_sources_found": 0,
+  "gt_used_as_input": false,
+  "test_files_read": false,
+  "checkpoint_sha256": {
+    "full_best_seed0.pt": "e0bf2c11efc298a968548d371a3505437d60b761881ab4198f2a39781e7fe779",
+    "full_last_seed0.pt": "35d3f604bed46e6242ce150442f01a05fffa40a2590730863db424956147a491",
+    "gps_only_best_seed0.pt": "d6f42c78554d39619d8d718fb2c3cf7aa665cd237ff89dcd00d6a74a7327471e",
+    "gps_only_last_seed0.pt": "13a1aa0d30ee93b4a663a6547c360c96fbe51f80dcdb88e4660389b23ec5f400"
+  },
+  "validation_checkpoint_selection_verified": true,
+  "eskf_not_ready_rows": 11,
+  "training_rerun": false,
+  "model_forward_run": false
+}

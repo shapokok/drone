@@ -1,0 +1,28 @@
+{
+  "status": "complete",
+  "split": "test",
+  "training_performed": false,
+  "optimizer_steps": 0,
+  "test_flights": [
+    "mars_6",
+    "mars_7"
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "model_evaluations": 48,
+  "baseline_evaluations": 24,
+  "started_utc": "2026-09-26T23:49:48.028064+00:00",
+  "run_identity": {
+    "kernel": "shapok/drone-nav-insane-final-test",
+    "version": "see submission receipt"
+  },
+  "retries": 0,
+  "eskf_status": "not_ready",
+  "summary_rows": 72,
+  "weights_unchanged": true,
+  "verification": "pass",
+  "finished_utc": "2026-09-26T23:49:50.242895+00:00"
+}

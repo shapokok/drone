@@ -1,0 +1,569 @@
+{
+  "description": "Byte-identical selected summaries and verification evidence; no raw sensors, prediction arrays or weights.",
+  "files": [
+    {
+      "path": "results/insane_pilot/config.json",
+      "original_path": "outputs/insane_pilot/config.json",
+      "bytes": 1780,
+      "sha256": "a4c07e913eb939e2d95efd1434393416e9fe66ad702d04b8f593acd6180a91e1"
+    },
+    {
+      "path": "results/insane_pilot/duration_summary.csv",
+      "original_path": "outputs/insane_pilot/duration_summary.csv",
+      "bytes": 1404,
+      "sha256": "4067f6dde27ae18b15a27904603a242efbdf344f2f87fcf79500df60650abee8"
+    },
+    {
+      "path": "results/insane_pilot/environment.json",
+      "original_path": "outputs/insane_pilot/environment.json",
+      "bytes": 158,
+      "sha256": "fb7b99fe2b81f312af48d19b5a1a66c18bb68979e8e27ab53bf32a5881b8dbe7"
+    },
+    {
+      "path": "results/insane_pilot/eskf_status.json",
+      "original_path": "outputs/insane_pilot/eskf_status.json",
+      "bytes": 383,
+      "sha256": "73692e8889eb06b63b87bae9c75ae9f98c108dbd7035543d28e342152cb5f58b"
+    },
+    {
+      "path": "results/insane_pilot/flight_duration_summary.csv",
+      "original_path": "outputs/insane_pilot/flight_duration_summary.csv",
+      "bytes": 2841,
+      "sha256": "d8399e566f40358fb7ca35a2d60820600574cd6b5613eb538ffefceb1a9925ba"
+    },
+    {
+      "path": "results/insane_pilot/independent_verification.json",
+      "original_path": "outputs/insane_pilot/independent_verification.json",
+      "bytes": 852,
+      "sha256": "ec89970a0e23a2a6bed23ddeda0f614eeede0fd642b796ca6f0f7d8c42197e80"
+    },
+    {
+      "path": "results/insane_pilot/outages.json",
+      "original_path": "outputs/insane_pilot/outages.json",
+      "bytes": 5362,
+      "sha256": "208ef71a355441c2f795155b448cc29626bca974ecb506960c74757fc07eb474"
+    },
+    {
+      "path": "results/insane_pilot/paired_differences.csv",
+      "original_path": "outputs/insane_pilot/paired_differences.csv",
+      "bytes": 3704,
+      "sha256": "2bdc66d8685cc2eef5671397f0aa594d1aff3adc4fc318764e34e7e20c50cc67"
+    },
+    {
+      "path": "results/insane_pilot/parameter_counts.json",
+      "original_path": "outputs/insane_pilot/parameter_counts.json",
+      "bytes": 39,
+      "sha256": "66b6091db21d4662e8ed0f5e989a24777736c99f1ce7e1355cb80d59194c81fc"
+    },
+    {
+      "path": "results/insane_pilot/preflight.json",
+      "original_path": "outputs/insane_pilot/preflight.json",
+      "bytes": 419,
+      "sha256": "016398c958b1702a586c5eab8319d2a443079c8fcde2fd817b5f6767e10b1e50"
+    },
+    {
+      "path": "results/insane_pilot/protocol_lock.json",
+      "original_path": "outputs/insane_pilot/protocol_lock.json",
+      "bytes": 816,
+      "sha256": "e64534f12ce81c092241b1b8ee8c466553175d5484871ece37f4b2f809a73201"
+    },
+    {
+      "path": "results/insane_pilot/scalers.json",
+      "original_path": "outputs/insane_pilot/scalers.json",
+      "bytes": 423,
+      "sha256": "80c2d8fd46c2f177dea56814628866cdb12f6ab32360c2ae9c0aec469b2b66c2"
+    },
+    {
+      "path": "results/insane_pilot/source_hashes.json",
+      "original_path": "outputs/insane_pilot/source_hashes.json",
+      "bytes": 1601,
+      "sha256": "bb1f6a6565c6dd8da0de1bbaf5974e6c8021dd6fbe8d0c7d105a07106570a354"
+    },
+    {
+      "path": "results/insane_pilot/splits.json",
+      "original_path": "outputs/insane_pilot/splits.json",
+      "bytes": 510,
+      "sha256": "a2f27d70ec0bae01dd7eb5dabf94994dbedd48898f72b293823549867fa075f4"
+    },
+    {
+      "path": "results/insane_pilot/status.json",
+      "original_path": "outputs/insane_pilot/status.json",
+      "bytes": 722,
+      "sha256": "645cb60eee7a9fe3f30a0737a3d4f89f771ffc0727c777cb3f5d2ffc220f78e8"
+    },
+    {
+      "path": "results/insane_pilot/summary.csv",
+      "original_path": "outputs/insane_pilot/summary.csv",
+      "bytes": 12074,
+      "sha256": "98f132ce74c1cb8c47976bb67fa3324ccfcc6a5c073fe5a02f46c6242c60086a"
+    },
+    {
+      "path": "results/insane_pilot/training_history.csv",
+      "original_path": "outputs/insane_pilot/training_history.csv",
+      "bytes": 1609,
+      "sha256": "03dacc4de9cd894f3dda59be857a6f68b1ca2ad0618e3ba74366bdb906a6c3c3"
+    },
+    {
+      "path": "results/insane_adaptive/adaptive_protocol_lock.json",
+      "original_path": "outputs/insane_adaptive/adaptive_protocol_lock.json",
+      "bytes": 1145,
+      "sha256": "8356b9370a209d61ba0e7a1c6653e58929f0d30d8b179f0d780cdff1c91e9953"
+    },
+    {
+      "path": "results/insane_adaptive/config.json",
+      "original_path": "outputs/insane_adaptive/config.json",
+      "bytes": 2586,
+      "sha256": "fde82dbe224e363979af23c49d8ad2f1f8c36b4f4f724952a0a8481fb107e4b9"
+    },
+    {
+      "path": "results/insane_adaptive/damping_lock.json",
+      "original_path": "outputs/insane_adaptive/damping_lock.json",
+      "bytes": 684,
+      "sha256": "447f7b5d3ba81b45e9ee19787c7c68adc07abf52536d5a676a1390da1635880d"
+    },
+    {
+      "path": "results/insane_adaptive/damping_train_selection.csv",
+      "original_path": "outputs/insane_adaptive/damping_train_selection.csv",
+      "bytes": 263,
+      "sha256": "3171ef4496dcbcd0bd559220e1484d8270a4156645f0f9fb41f0409fdaace827"
+    },
+    {
+      "path": "results/insane_adaptive/duration_summary.csv",
+      "original_path": "outputs/insane_adaptive/duration_summary.csv",
+      "bytes": 749,
+      "sha256": "70171440eedd47fd1a8f77e23a77b2aa4986d222bb82d32244b8d95ff3dce6bd"
+    },
+    {
+      "path": "results/insane_adaptive/environment.json",
+      "original_path": "outputs/insane_adaptive/environment.json",
+      "bytes": 158,
+      "sha256": "fb7b99fe2b81f312af48d19b5a1a66c18bb68979e8e27ab53bf32a5881b8dbe7"
+    },
+    {
+      "path": "results/insane_adaptive/eskf_status.json",
+      "original_path": "outputs/insane_adaptive/eskf_status.json",
+      "bytes": 232,
+      "sha256": "230e6217392c17ff09c2c89c4b02b0ad692bbed0c2ee10a4684b8ef891cdb96f"
+    },
+    {
+      "path": "results/insane_adaptive/flight_comparisons.csv",
+      "original_path": "outputs/insane_adaptive/flight_comparisons.csv",
+      "bytes": 5163,
+      "sha256": "8cb0bc3cb5dbc6a9923813b915b02b25ac709f39a38aaca056b2f815fd6f2bf3"
+    },
+    {
+      "path": "results/insane_adaptive/flight_duration_summary.csv",
+      "original_path": "outputs/insane_adaptive/flight_duration_summary.csv",
+      "bytes": 1668,
+      "sha256": "ce9f126de5e355257a97b774e9c323c46c05954d97a14ac84c598501c290ad02"
+    },
+    {
+      "path": "results/insane_adaptive/gate_summary.csv",
+      "original_path": "outputs/insane_adaptive/gate_summary.csv",
+      "bytes": 7563,
+      "sha256": "1fc823771eb1a9f4e28c27c1cfd3ebe942230631684697a899b97b765104fe51"
+    },
+    {
+      "path": "results/insane_adaptive/gate_traces.png",
+      "original_path": "outputs/insane_adaptive/gate_traces.png",
+      "bytes": 491898,
+      "sha256": "ec60631808358086a53adeae3388feefaf7f7f6ef7e82e751347b4f076ed6df3"
+    },
+    {
+      "path": "results/insane_adaptive/imu_episode_seed_summary.csv",
+      "original_path": "outputs/insane_adaptive/imu_episode_seed_summary.csv",
+      "bytes": 648,
+      "sha256": "ad68ed1983b3ac109e0de4441f18bfc5218d62d87c6db94d9b37eeb0b13f699e"
+    },
+    {
+      "path": "results/insane_adaptive/independent_verification.json",
+      "original_path": "outputs/insane_adaptive/independent_verification.json",
+      "bytes": 555,
+      "sha256": "ff6ca0727f775e65d1d7fe3aefe3948719f1ba583ba4961d1bb25c01fd27945c"
+    },
+    {
+      "path": "results/insane_adaptive/initial_weight_hashes.json",
+      "original_path": "outputs/insane_adaptive/initial_weight_hashes.json",
+      "bytes": 573,
+      "sha256": "b4ca8251b209fd1bc1a1ca020199233693459ac50315ee270c5f4b8bb288d190"
+    },
+    {
+      "path": "results/insane_adaptive/outages.json",
+      "original_path": "outputs/insane_adaptive/outages.json",
+      "bytes": 5362,
+      "sha256": "208ef71a355441c2f795155b448cc29626bca974ecb506960c74757fc07eb474"
+    },
+    {
+      "path": "results/insane_adaptive/paired_differences.csv",
+      "original_path": "outputs/insane_adaptive/paired_differences.csv",
+      "bytes": 26028,
+      "sha256": "750e5cd7a9ce9f94b7359b4efb905c0abc64e2007827f81ea2ada7bf416dad97"
+    },
+    {
+      "path": "results/insane_adaptive/parameter_counts.json",
+      "original_path": "outputs/insane_adaptive/parameter_counts.json",
+      "bytes": 201,
+      "sha256": "71cbd0cf397ddaa7ca7c6df43029871239da879acee079f4b6de70bee8cf6ad2"
+    },
+    {
+      "path": "results/insane_adaptive/preflight.json",
+      "original_path": "outputs/insane_adaptive/preflight.json",
+      "bytes": 513,
+      "sha256": "cbec0e9631e2a0bc77519f7effd6741040c6be90f4f7e571e1c2eb94e49828b8"
+    },
+    {
+      "path": "results/insane_adaptive/previous_pilot_seed0.csv",
+      "original_path": "outputs/insane_adaptive/previous_pilot_seed0.csv",
+      "bytes": 12074,
+      "sha256": "98f132ce74c1cb8c47976bb67fa3324ccfcc6a5c073fe5a02f46c6242c60086a"
+    },
+    {
+      "path": "results/insane_adaptive/protocol_lock.json",
+      "original_path": "outputs/insane_adaptive/protocol_lock.json",
+      "bytes": 816,
+      "sha256": "e64534f12ce81c092241b1b8ee8c466553175d5484871ece37f4b2f809a73201"
+    },
+    {
+      "path": "results/insane_adaptive/scalers.json",
+      "original_path": "outputs/insane_adaptive/scalers.json",
+      "bytes": 423,
+      "sha256": "80c2d8fd46c2f177dea56814628866cdb12f6ab32360c2ae9c0aec469b2b66c2"
+    },
+    {
+      "path": "results/insane_adaptive/seed_duration_summary.csv",
+      "original_path": "outputs/insane_adaptive/seed_duration_summary.csv",
+      "bytes": 792,
+      "sha256": "1cffd9dcfa827808fe95443f6d98f389fef384867ffa8f6aef62d39f56b07115"
+    },
+    {
+      "path": "results/insane_adaptive/seed_flight_duration_summary.csv",
+      "original_path": "outputs/insane_adaptive/seed_flight_duration_summary.csv",
+      "bytes": 1799,
+      "sha256": "3adc0d75165af3dde73dcb1dc83838f4268c45508af9ded1dd7d496685cac5cc"
+    },
+    {
+      "path": "results/insane_adaptive/source_hashes.json",
+      "original_path": "outputs/insane_adaptive/source_hashes.json",
+      "bytes": 2576,
+      "sha256": "096314e1a12428b03cd91263ecee4ef562722829339c4403b79f13f4c3cca049"
+    },
+    {
+      "path": "results/insane_adaptive/splits.json",
+      "original_path": "outputs/insane_adaptive/splits.json",
+      "bytes": 510,
+      "sha256": "a2f27d70ec0bae01dd7eb5dabf94994dbedd48898f72b293823549867fa075f4"
+    },
+    {
+      "path": "results/insane_adaptive/status.json",
+      "original_path": "outputs/insane_adaptive/status.json",
+      "bytes": 1410,
+      "sha256": "9c9889177a3e70565f480f3dcac49a1cbb626298e5ed53dd94f7d08b64722ae0"
+    },
+    {
+      "path": "results/insane_adaptive/summary.csv",
+      "original_path": "outputs/insane_adaptive/summary.csv",
+      "bytes": 21821,
+      "sha256": "370a8a4d6a69ef728fa344c926665a92601a93d9ea8903878d3fab54709a3e31"
+    },
+    {
+      "path": "results/insane_adaptive/training_history.csv",
+      "original_path": "outputs/insane_adaptive/training_history.csv",
+      "bytes": 22853,
+      "sha256": "89226801f4a349ea2b36b45b021e94c6b58219443a4716fe2318d05d324e0d33"
+    },
+    {
+      "path": "results/insane_final_test/FINAL_EVALUATION_LOCK.json",
+      "original_path": "outputs/insane_final_test/FINAL_EVALUATION_LOCK.json",
+      "bytes": 16243,
+      "sha256": "05a0f7a9fff31929b0f08cb0aa63efdf3835eced96df09822e28976b42fd5841"
+    },
+    {
+      "path": "results/insane_final_test/adaptive_source_hashes.json",
+      "original_path": "outputs/insane_final_test/adaptive_source_hashes.json",
+      "bytes": 2576,
+      "sha256": "096314e1a12428b03cd91263ecee4ef562722829339c4403b79f13f4c3cca049"
+    },
+    {
+      "path": "results/insane_final_test/adaptive_status.json",
+      "original_path": "outputs/insane_final_test/adaptive_status.json",
+      "bytes": 1410,
+      "sha256": "9c9889177a3e70565f480f3dcac49a1cbb626298e5ed53dd94f7d08b64722ae0"
+    },
+    {
+      "path": "results/insane_final_test/config.json",
+      "original_path": "outputs/insane_final_test/config.json",
+      "bytes": 2586,
+      "sha256": "fde82dbe224e363979af23c49d8ad2f1f8c36b4f4f724952a0a8481fb107e4b9"
+    },
+    {
+      "path": "results/insane_final_test/damping_lock.json",
+      "original_path": "outputs/insane_final_test/damping_lock.json",
+      "bytes": 684,
+      "sha256": "447f7b5d3ba81b45e9ee19787c7c68adc07abf52536d5a676a1390da1635880d"
+    },
+    {
+      "path": "results/insane_final_test/environment.json",
+      "original_path": "outputs/insane_final_test/environment.json",
+      "bytes": 264,
+      "sha256": "a6ce2658cbd7516c644a97bf82332c560eef01e7dea4821caabb58d36e0446a1"
+    },
+    {
+      "path": "results/insane_final_test/eskf_status.json",
+      "original_path": "outputs/insane_final_test/eskf_status.json",
+      "bytes": 50,
+      "sha256": "f60a649df823ecddcabe7bbe0e0d3e3656fb6b4a025b83545bfab6c0b7ff2a1a"
+    },
+    {
+      "path": "results/insane_final_test/failure_execution_evidence.json",
+      "original_path": "outputs/insane_final_test/failure_execution_evidence.json",
+      "bytes": 284,
+      "sha256": "f018569ffd1a82b6d1a1c7745c4a3518af246780161a491b2c559c98c6cd16e7"
+    },
+    {
+      "path": "results/insane_final_test/independent_verification.json",
+      "original_path": "outputs/insane_final_test/independent_verification.json",
+      "bytes": 495,
+      "sha256": "000c73c87f7d50094773306defcf15ddfff220d474cf4316cd8e039e6eb23a3f"
+    },
+    {
+      "path": "results/insane_final_test/remote_status.json",
+      "original_path": "outputs/insane_final_test/remote_status.json",
+      "bytes": 101,
+      "sha256": "6582d1bbead94edd484a7c4f20af8562ae731139814397760d7ae053315ddd32"
+    },
+    {
+      "path": "results/insane_final_test/scalers.json",
+      "original_path": "outputs/insane_final_test/scalers.json",
+      "bytes": 423,
+      "sha256": "80c2d8fd46c2f177dea56814628866cdb12f6ab32360c2ae9c0aec469b2b66c2"
+    },
+    {
+      "path": "results/insane_final_test/source_hashes.json",
+      "original_path": "outputs/insane_final_test/source_hashes.json",
+      "bytes": 2119,
+      "sha256": "8e33f4bdb08e03668df8913c777afca114f34387b40d2cc340f1a01f65b27b7f"
+    },
+    {
+      "path": "results/insane_final_test/status.json",
+      "original_path": "outputs/insane_final_test/status.json",
+      "bytes": 1036,
+      "sha256": "ebe9c0cc06712270097274ae42e89ad42145e8965bfa2799e4b7b17c28008053"
+    },
+    {
+      "path": "results/insane_final_test/test_manifest.json",
+      "original_path": "outputs/insane_final_test/test_manifest.json",
+      "bytes": 4867,
+      "sha256": "9d729572c4ba9f3c87484d6b60e4b77c8b996975e7d9a6b7bee4e001b2e4f7fd"
+    },
+    {
+      "path": "results/insane_final_test_retry/FINAL_EVALUATION_LOCK.json",
+      "original_path": "outputs/insane_final_test_retry/FINAL_EVALUATION_LOCK.json",
+      "bytes": 16243,
+      "sha256": "05a0f7a9fff31929b0f08cb0aa63efdf3835eced96df09822e28976b42fd5841"
+    },
+    {
+      "path": "results/insane_final_test_retry/PREFLIGHT_PATCH_MANIFEST.json",
+      "original_path": "outputs/insane_final_test_retry/PREFLIGHT_PATCH_MANIFEST.json",
+      "bytes": 1860,
+      "sha256": "1912d81d13628475c307100845bc96671f44c3b41a3f26de44347ca5d33442a8"
+    },
+    {
+      "path": "results/insane_final_test_retry/PREFLIGHT_REPAIR_VERIFICATION.json",
+      "original_path": "outputs/insane_final_test_retry/PREFLIGHT_REPAIR_VERIFICATION.json",
+      "bytes": 1813,
+      "sha256": "d930324bdaf389eeace4c20bda3280a94fc99b1c24e5c8a267cb7d43c9055f82"
+    },
+    {
+      "path": "results/insane_final_test_retry/adaptive_source_hashes.json",
+      "original_path": "outputs/insane_final_test_retry/adaptive_source_hashes.json",
+      "bytes": 2576,
+      "sha256": "096314e1a12428b03cd91263ecee4ef562722829339c4403b79f13f4c3cca049"
+    },
+    {
+      "path": "results/insane_final_test_retry/adaptive_status.json",
+      "original_path": "outputs/insane_final_test_retry/adaptive_status.json",
+      "bytes": 1410,
+      "sha256": "9c9889177a3e70565f480f3dcac49a1cbb626298e5ed53dd94f7d08b64722ae0"
+    },
+    {
+      "path": "results/insane_final_test_retry/checkpoint_hashes_after.json",
+      "original_path": "outputs/insane_final_test_retry/checkpoint_hashes_after.json",
+      "bytes": 621,
+      "sha256": "fc1b5e6261e706b1aafe2ce6175b3c90b6d0a49dac375692917d70ef13582da0"
+    },
+    {
+      "path": "results/insane_final_test_retry/config.json",
+      "original_path": "outputs/insane_final_test_retry/config.json",
+      "bytes": 2586,
+      "sha256": "fde82dbe224e363979af23c49d8ad2f1f8c36b4f4f724952a0a8481fb107e4b9"
+    },
+    {
+      "path": "results/insane_final_test_retry/damping_lock.json",
+      "original_path": "outputs/insane_final_test_retry/damping_lock.json",
+      "bytes": 684,
+      "sha256": "447f7b5d3ba81b45e9ee19787c7c68adc07abf52536d5a676a1390da1635880d"
+    },
+    {
+      "path": "results/insane_final_test_retry/duration_summary.csv",
+      "original_path": "outputs/insane_final_test_retry/duration_summary.csv",
+      "bytes": 750,
+      "sha256": "0ed34d892637486920f3ec37edadeeb584de2293ef75ecc56dea0cecbc5886e3"
+    },
+    {
+      "path": "results/insane_final_test_retry/environment.json",
+      "original_path": "outputs/insane_final_test_retry/environment.json",
+      "bytes": 158,
+      "sha256": "fb7b99fe2b81f312af48d19b5a1a66c18bb68979e8e27ab53bf32a5881b8dbe7"
+    },
+    {
+      "path": "results/insane_final_test_retry/eskf_status.json",
+      "original_path": "outputs/insane_final_test_retry/eskf_status.json",
+      "bytes": 232,
+      "sha256": "8219eea629c9ad432e2beaa945572d39e50fc5ad0e9244102cdc47fe7a0219d8"
+    },
+    {
+      "path": "results/insane_final_test_retry/gate_summary.csv",
+      "original_path": "outputs/insane_final_test_retry/gate_summary.csv",
+      "bytes": 5055,
+      "sha256": "3c0cd491798d186d0e8fd348d210d7dc98e128bc8c39994d3b7126e9953c0f62"
+    },
+    {
+      "path": "results/insane_final_test_retry/gate_traces.png",
+      "original_path": "outputs/insane_final_test_retry/gate_traces.png",
+      "bytes": 344173,
+      "sha256": "252c12e8a20bbaecf5232ae2fe7a6e652a3c9deeb47d9f149cc1db8ee68b6867"
+    },
+    {
+      "path": "results/insane_final_test_retry/independent_verification.json",
+      "original_path": "outputs/insane_final_test_retry/independent_verification.json",
+      "bytes": 616,
+      "sha256": "dc79ec2cc28e7f9e1ce46ec5d050158a6ecca6939be18adc1507af07483280eb"
+    },
+    {
+      "path": "results/insane_final_test_retry/local_independent_verification.json",
+      "original_path": "outputs/insane_final_test_retry/local_independent_verification.json",
+      "bytes": 618,
+      "sha256": "76f0090ea27cded2d35880f4938d32ebd98091960172e4891be6d97db3f477e6"
+    },
+    {
+      "path": "results/insane_final_test_retry/local_raw_reparse_comparison.json",
+      "original_path": "outputs/insane_final_test_retry/local_raw_reparse_comparison.json",
+      "bytes": 1184,
+      "sha256": "f9d85a37181c60d561c8b05bc13bab7b87e3d26af8c0fc672092be07c0e835d6"
+    },
+    {
+      "path": "results/insane_final_test_retry/paired_differences.csv",
+      "original_path": "outputs/insane_final_test_retry/paired_differences.csv",
+      "bytes": 18034,
+      "sha256": "5f6ce53bf87b8e3fec02304bd7f44832197007b58d9d76935ebf3df4dda624b9"
+    },
+    {
+      "path": "results/insane_final_test_retry/paired_episode_summary.csv",
+      "original_path": "outputs/insane_final_test_retry/paired_episode_summary.csv",
+      "bytes": 472,
+      "sha256": "d2d35a6818c696959a7da86d6218065f084059a74cfaed6096125f8378b296b0"
+    },
+    {
+      "path": "results/insane_final_test_retry/per_flight_comparisons.csv",
+      "original_path": "outputs/insane_final_test_retry/per_flight_comparisons.csv",
+      "bytes": 5131,
+      "sha256": "682a3196ef65150bd80b51112eef6b7334125a94cd0cb23a25aaf056986c048d"
+    },
+    {
+      "path": "results/insane_final_test_retry/per_flight_per_seed_summary.csv",
+      "original_path": "outputs/insane_final_test_retry/per_flight_per_seed_summary.csv",
+      "bytes": 1803,
+      "sha256": "12fd540c0d0b52f7c743b55306dfacf58dc6675f3e0f16ddfc7e48d6ea7ca85b"
+    },
+    {
+      "path": "results/insane_final_test_retry/per_flight_summary.csv",
+      "original_path": "outputs/insane_final_test_retry/per_flight_summary.csv",
+      "bytes": 1675,
+      "sha256": "2e419532dc7d7853ef8cf39d776ccf3d4a888595f75f8d1307bbbf32baf50328"
+    },
+    {
+      "path": "results/insane_final_test_retry/per_seed_summary.csv",
+      "original_path": "outputs/insane_final_test_retry/per_seed_summary.csv",
+      "bytes": 792,
+      "sha256": "6e4ab3c450b15f28b8bf49dccd754d0903cfbfa8c5ed3077e9528d0479340c2f"
+    },
+    {
+      "path": "results/insane_final_test_retry/preflight.json",
+      "original_path": "outputs/insane_final_test_retry/preflight.json",
+      "bytes": 644,
+      "sha256": "2b91cf99e9fe007cd49a61594e1e4bf374e74b46504184a8098836262abbee81"
+    },
+    {
+      "path": "results/insane_final_test_retry/preflight_evidence/check_01/actual_regenerated_manifest.json",
+      "original_path": "outputs/insane_final_test_retry/preflight_evidence/check_01/actual_regenerated_manifest.json",
+      "bytes": 4867,
+      "sha256": "bda13b9921c6bf54c39e7b7df9db1ee6c6546e3410fa6549707419d79c5cee99"
+    },
+    {
+      "path": "results/insane_final_test_retry/preflight_evidence/check_01/manifest_field_diff.json",
+      "original_path": "outputs/insane_final_test_retry/preflight_evidence/check_01/manifest_field_diff.json",
+      "bytes": 29284,
+      "sha256": "b335142b7eba0da70c17d32c5899d8717b09db2838316bcc4b66393ad0fbc3ab"
+    },
+    {
+      "path": "results/insane_final_test_retry/preflight_evidence/check_02/actual_regenerated_manifest.json",
+      "original_path": "outputs/insane_final_test_retry/preflight_evidence/check_02/actual_regenerated_manifest.json",
+      "bytes": 4867,
+      "sha256": "bda13b9921c6bf54c39e7b7df9db1ee6c6546e3410fa6549707419d79c5cee99"
+    },
+    {
+      "path": "results/insane_final_test_retry/preflight_evidence/check_02/manifest_field_diff.json",
+      "original_path": "outputs/insane_final_test_retry/preflight_evidence/check_02/manifest_field_diff.json",
+      "bytes": 29284,
+      "sha256": "b335142b7eba0da70c17d32c5899d8717b09db2838316bcc4b66393ad0fbc3ab"
+    },
+    {
+      "path": "results/insane_final_test_retry/run_identity.json",
+      "original_path": "outputs/insane_final_test_retry/run_identity.json",
+      "bytes": 364,
+      "sha256": "c06e002a8bbe0291f28882734fc0fbfd3165f1d822a6c7f33b0e60f25ec50683"
+    },
+    {
+      "path": "results/insane_final_test_retry/scalers.json",
+      "original_path": "outputs/insane_final_test_retry/scalers.json",
+      "bytes": 423,
+      "sha256": "80c2d8fd46c2f177dea56814628866cdb12f6ab32360c2ae9c0aec469b2b66c2"
+    },
+    {
+      "path": "results/insane_final_test_retry/source_hashes.json",
+      "original_path": "outputs/insane_final_test_retry/source_hashes.json",
+      "bytes": 2119,
+      "sha256": "8e33f4bdb08e03668df8913c777afca114f34387b40d2cc340f1a01f65b27b7f"
+    },
+    {
+      "path": "results/insane_final_test_retry/status.json",
+      "original_path": "outputs/insane_final_test_retry/status.json",
+      "bytes": 595,
+      "sha256": "0c5c0ede0b100e7510c72cf0b7fd8aabc29259ed53698c7508a71591b12e0f39"
+    },
+    {
+      "path": "results/insane_final_test_retry/summary.csv",
+      "original_path": "outputs/insane_final_test_retry/summary.csv",
+      "bytes": 15128,
+      "sha256": "901e57f243cb97493cbec7ca6e77ce3b825e602208db135b8a5eef9bf8698f23"
+    },
+    {
+      "path": "results/insane_final_test_retry/test_manifest.json",
+      "original_path": "outputs/insane_final_test_retry/test_manifest.json",
+      "bytes": 4867,
+      "sha256": "9d729572c4ba9f3c87484d6b60e4b77c8b996975e7d9a6b7bee4e001b2e4f7fd"
+    },
+    {
+      "path": "results/insane_final_test_retry/weights_after.json",
+      "original_path": "outputs/insane_final_test_retry/weights_after.json",
+      "bytes": 621,
+      "sha256": "6cd9f175b61080f052a3e80d3f150d9e97beea02fadbbee25a553dabb78959c8"
+    },
+    {
+      "path": "results/insane_final_test_retry/weights_before.json",
+      "original_path": "outputs/insane_final_test_retry/weights_before.json",
+      "bytes": 621,
+      "sha256": "6cd9f175b61080f052a3e80d3f150d9e97beea02fadbbee25a553dabb78959c8"
+    }
+  ]
+}

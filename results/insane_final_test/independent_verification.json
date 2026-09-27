@@ -1,0 +1,12 @@
+{
+  "status": "not_run_no_predictions",
+  "prediction_files_checked": 0,
+  "summary_rows": 0,
+  "paired_rows": 0,
+  "remote_output_prediction_or_metric_files": [],
+  "checkpoint_file_hashes_verified": 6,
+  "source_and_notebook_hashes_unchanged": true,
+  "lock_sha256_matches_submission": true,
+  "weights_after_inference_verification": "not applicable; inference did not start",
+  "note": "Integrity checks describe frozen inputs only; no numerical test result or metric verification exists."
+}

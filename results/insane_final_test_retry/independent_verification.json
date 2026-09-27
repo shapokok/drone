@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "prediction_files_checked": 72,
+  "summary_rows": 72,
+  "paired_rows": 126,
+  "duplicate_rows": 0,
+  "max_metric_absolute_discrepancy_m": 3.552713678800501e-15,
+  "max_paired_difference_discrepancy_m": 5.329070518200751e-15,
+  "max_gate_integral_discrepancy_m": 5.338419751765855e-05,
+  "all_points_and_masks_equal": true,
+  "native_gt_and_gnss_provenance_verified_against_raw": true,
+  "all_predictions_finite": true,
+  "weights_unchanged": true,
+  "model_inference_performed_by_verifier": false,
+  "control_outage_metrics_are_na": true,
+  "seed_count": 3,
+  "independent_test_flights": 2
+}

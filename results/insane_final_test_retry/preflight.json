@@ -1,0 +1,21 @@
+{
+  "status": "pass",
+  "checkpoint_compatibility_checked": true,
+  "checkpoints": 6,
+  "all_hashes_pass": true,
+  "test_manifest_exact_match": false,
+  "test_manifest_scientific_fields_exact_match": true,
+  "tolerated_inventory_differences": 2,
+  "manifest_diagnostics_directory": "/kaggle/working/insane_final_test_retry_launch/preflight_evidence/check_02",
+  "train_scaler_reused_without_refit": true,
+  "tau_s": 5,
+  "test_flights": [
+    "mars_6",
+    "mars_7"
+  ],
+  "scenario_count": 8,
+  "unsupported": [],
+  "model_predictions_computed": false,
+  "baseline_metrics_computed": false,
+  "projection_max_error_m": 1.116038816917353e-09
+}

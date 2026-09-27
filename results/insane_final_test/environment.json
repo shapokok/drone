@@ -1,0 +1,8 @@
+{
+  "status": "not_collected_by_remote_runner",
+  "reason": "preflight failed before evaluation runner and environment export",
+  "requested_platform": "Kaggle GPU",
+  "actual_gpu_model": null,
+  "actual_torch_version": null,
+  "local_packaging_python": "3.9.6"
+}

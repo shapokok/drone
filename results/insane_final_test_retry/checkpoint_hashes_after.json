@@ -1,0 +1,8 @@
+{
+  "adaptive_full_seed0_best.pt": "809320603d17d43ddafcbceff7f03a0119d6b5fbab708da82eac68f7704c22d7",
+  "adaptive_full_seed1_best.pt": "629d499c3aa4492c6f98822bc67dc6981e15762ca16a1fad538886b018cbf878",
+  "adaptive_full_seed2_best.pt": "722c373f3de2a3614bb589a6acaba322ba33f4716f683f2f018170ced075462e",
+  "adaptive_gps_only_seed0_best.pt": "b5aba59e4f23d5e171ea7945b5eb3af0944b854f5a60a9f437d3e5855589e502",
+  "adaptive_gps_only_seed1_best.pt": "559e7f75aaf80c998b50002290de221fce2884a3f1f687cc2cd610b23d25e4cb",
+  "adaptive_gps_only_seed2_best.pt": "1d076de9c154223b8a112e405b0c5c0c98fa14bd72bb5def3e49140dd41ae9b3"
+}

@@ -1,0 +1,53 @@
+{
+  "status": "complete",
+  "test_used": false,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "planned_trainings": 6,
+  "models": {
+    "adaptive_full_seed0": {
+      "last_epoch": 30,
+      "best_epoch": 26,
+      "best_validation_criterion_m": 11.575645798164196
+    },
+    "adaptive_gps_only_seed0": {
+      "last_epoch": 23,
+      "best_epoch": 18,
+      "best_validation_criterion_m": 14.576295091812947
+    },
+    "adaptive_full_seed1": {
+      "last_epoch": 23,
+      "best_epoch": 18,
+      "best_validation_criterion_m": 12.542395232143102
+    },
+    "adaptive_gps_only_seed1": {
+      "last_epoch": 23,
+      "best_epoch": 18,
+      "best_validation_criterion_m": 14.576982885653827
+    },
+    "adaptive_full_seed2": {
+      "last_epoch": 30,
+      "best_epoch": 30,
+      "best_validation_criterion_m": 13.074474395384133
+    },
+    "adaptive_gps_only_seed2": {
+      "last_epoch": 23,
+      "best_epoch": 18,
+      "best_validation_criterion_m": 14.616174582129332
+    }
+  },
+  "eskf_status": "not_ready",
+  "code_version": "ea0480ffdb853952ef1184283b480646927be865c15e83eae71778abc644560c",
+  "started_utc": "2026-09-26T22:46:43.672623+00:00",
+  "run_identity": {
+    "kernel": "shapok/drone-nav-insane-adaptive",
+    "version": "see submission receipt"
+  },
+  "completed_trainings": 6,
+  "evaluation_rows": 99,
+  "finished_utc": "2026-09-26T22:47:02.459630+00:00",
+  "additional_jobs_started": false
+}

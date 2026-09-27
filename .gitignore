@@ -1,15 +1,36 @@
-__pycache__/
-*.pyc
+# Local environments and caches
 .venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 .DS_Store
-
-data/raw/
-data/processed/
-outputs/
-checkpoints/
-predictions/
-*.pt
-*.npy
-
-# keep small tracked CSVs (results summaries) but ignore large local caches
+.ipynb_checkpoints/
 *.ipynb_checkpoints
+
+# Credentials and local settings
+.env
+.env.*
+!.env.example
+kaggle.json
+.kaggle/
+*.pem
+*.key
+
+# Private/raw data and full execution artifacts (curated summaries live in results/)
+/data/
+/outputs/
+/checkpoints/
+/predictions/
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.b64
+*.zip
+*.tar
+*.tar.gz
+*.tgz

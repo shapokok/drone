@@ -1,0 +1,10 @@
+{
+  "kernel": "shapok/drone-nav-insane-final-test",
+  "output_run_ids": [
+    "353128919"
+  ],
+  "execution_artifacts": [],
+  "server_output_file_count": 105,
+  "metric_or_prediction_output_paths": [],
+  "note": "Read-only retrieval after failed job; no resubmission or inference."
+}

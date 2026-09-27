@@ -1,0 +1,15 @@
+{
+  "kernel": "shapok/drone-nav-insane-final-test",
+  "version": 2,
+  "output_run_ids": [
+    "353132214"
+  ],
+  "status": "complete",
+  "model_evaluations": 48,
+  "baseline_evaluations": 24,
+  "training_performed": false,
+  "authorized_retry_after_failed_run": "353128919",
+  "evaluation_passes": 1,
+  "downloaded_artifacts": 148,
+  "downloaded_bytes": 5583197
+}

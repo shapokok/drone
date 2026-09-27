@@ -1,0 +1,325 @@
+{
+  "pilot_id": "fusionnav_v2_causal_motion_pilot_v1",
+  "status": "prepared_not_trained",
+  "config_sha256": "f413f38984fd816e6ade634dcf329488c3225117085f7116f041c1622e43c6b0",
+  "seed": 0,
+  "scenarios": [
+    {
+      "scenario_id": "val_control",
+      "split": "validation",
+      "episode_id": null,
+      "requested_duration_s": 0,
+      "source_blocked_intervals_s": [],
+      "unavailable_index_runs": [],
+      "n_unavailable": 0,
+      "metric_scope": "whole_common_trace",
+      "n_common": 2688,
+      "mask_uint8_sha256": "588b1bea0cec08685bbc845b232ccb924e129421942bd1ab3065b6e7f79a3bef",
+      "generator_seed": 0,
+      "rng_used": false
+    },
+    {
+      "scenario_id": "val_e1_d10s",
+      "split": "validation",
+      "episode_id": 1,
+      "requested_duration_s": 10,
+      "target_onset_s": 1975.82550675,
+      "onset_s": 1975.869753,
+      "requested_cutoff_s": 1985.869753,
+      "last_unavailable_s": 1985.7717619999999,
+      "first_link_available_after_s": 1985.871752,
+      "observed_mask_interval_s": 10.001999000000069,
+      "unavailable_sample_span_s": 9.902008999999907,
+      "available_history_span_s": 70.11699599999997,
+      "recovery_span_s": 190.17200400000002,
+      "source_blocked_intervals_s": [
+        [
+          1975.869753,
+          1985.869753
+        ]
+      ],
+      "unavailable_index_runs": [
+        [
+          686,
+          786
+        ]
+      ],
+      "n_unavailable": 100,
+      "metric_scope": "outage_only",
+      "n_common": 2688,
+      "mask_uint8_sha256": "9478793466ccff3f5a44e05df5b253ad2f7cc6695f5487567ebcd1da995cbd7d",
+      "generator_seed": 0,
+      "rng_used": false
+    },
+    {
+      "scenario_id": "val_e1_d30s",
+      "split": "validation",
+      "episode_id": 1,
+      "requested_duration_s": 30,
+      "target_onset_s": 1975.82550675,
+      "onset_s": 1975.869753,
+      "requested_cutoff_s": 2005.869753,
+      "last_unavailable_s": 2005.7787529999998,
+      "first_link_available_after_s": 2005.878753,
+      "observed_mask_interval_s": 30.009000000000015,
+      "unavailable_sample_span_s": 29.908999999999878,
+      "available_history_span_s": 70.11699599999997,
+      "recovery_span_s": 170.16500300000007,
+      "source_blocked_intervals_s": [
+        [
+          1975.869753,
+          2005.869753
+        ]
+      ],
+      "unavailable_index_runs": [
+        [
+          686,
+          986
+        ]
+      ],
+      "n_unavailable": 300,
+      "metric_scope": "outage_only",
+      "n_common": 2688,
+      "mask_uint8_sha256": "7d0af73a47f34df6d72982ada3badbd63efe284f363d489628995b4f3afd9881",
+      "generator_seed": 0,
+      "rng_used": false
+    },
+    {
+      "scenario_id": "val_e1_d60s",
+      "split": "validation",
+      "episode_id": 1,
+      "requested_duration_s": 60,
+      "target_onset_s": 1975.82550675,
+      "onset_s": 1975.869753,
+      "requested_cutoff_s": 2035.869753,
+      "last_unavailable_s": 2035.788752,
+      "first_link_available_after_s": 2035.888753,
+      "observed_mask_interval_s": 60.019000000000005,
+      "unavailable_sample_span_s": 59.918998999999985,
+      "available_history_span_s": 70.11699599999997,
+      "recovery_span_s": 140.15500300000008,
+      "source_blocked_intervals_s": [
+        [
+          1975.869753,
+          2035.869753
+        ]
+      ],
+      "unavailable_index_runs": [
+        [
+          686,
+          1286
+        ]
+      ],
+      "n_unavailable": 600,
+      "metric_scope": "outage_only",
+      "n_common": 2688,
+      "mask_uint8_sha256": "0b086cc043ee5ea7afba90e7fadd076edd9bd6b2a0d2f616dbb5d05f011e7724",
+      "generator_seed": 0,
+      "rng_used": false
+    },
+    {
+      "scenario_id": "val_e2_d10s",
+      "split": "validation",
+      "episode_id": 2,
+      "requested_duration_s": 10,
+      "target_onset_s": 2015.8982565000001,
+      "onset_s": 2015.9817529999998,
+      "requested_cutoff_s": 2025.9817529999998,
+      "last_unavailable_s": 2025.8857529999998,
+      "first_link_available_after_s": 2025.986754,
+      "observed_mask_interval_s": 10.00500100000022,
+      "unavailable_sample_span_s": 9.903999999999996,
+      "available_history_span_s": 110.22899599999982,
+      "recovery_span_s": 150.057002,
+      "source_blocked_intervals_s": [
+        [
+          2015.9817529999998,
+          2025.9817529999998
+        ]
+      ],
+      "unavailable_index_runs": [
+        [
+          1087,
+          1187
+        ]
+      ],
+      "n_unavailable": 100,
+      "metric_scope": "outage_only",
+      "n_common": 2688,
+      "mask_uint8_sha256": "f872ab438fa975ee018f3d6c65dd8caa39fc890e192c83c75c42d8209d0f0f0b",
+      "generator_seed": 0,
+      "rng_used": false
+    },
+    {
+      "scenario_id": "val_e2_d30s",
+      "split": "validation",
+      "episode_id": 2,
+      "requested_duration_s": 30,
+      "target_onset_s": 2015.8982565000001,
+      "onset_s": 2015.9817529999998,
+      "requested_cutoff_s": 2045.9817529999998,
+      "last_unavailable_s": 2045.893754,
+      "first_link_available_after_s": 2045.993796,
+      "observed_mask_interval_s": 30.012043000000176,
+      "unavailable_sample_span_s": 29.912001000000146,
+      "available_history_span_s": 110.22899599999982,
+      "recovery_span_s": 130.04996000000006,
+      "source_blocked_intervals_s": [
+        [
+          2015.9817529999998,
+          2045.9817529999998
+        ]
+      ],
+      "unavailable_index_runs": [
+        [
+          1087,
+          1387
+        ]
+      ],
+      "n_unavailable": 300,
+      "metric_scope": "outage_only",
+      "n_common": 2688,
+      "mask_uint8_sha256": "29d5854659ff5815929f2757a901e6ec74ef2f31a39ca9f9ced5a7f01b969755",
+      "generator_seed": 0,
+      "rng_used": false
+    },
+    {
+      "scenario_id": "val_e2_d60s",
+      "split": "validation",
+      "episode_id": 2,
+      "requested_duration_s": 60,
+      "target_onset_s": 2015.8982565000001,
+      "onset_s": 2015.9817529999998,
+      "requested_cutoff_s": 2075.981753,
+      "last_unavailable_s": 2075.9067919999998,
+      "first_link_available_after_s": 2076.006753,
+      "observed_mask_interval_s": 60.02500000000032,
+      "unavailable_sample_span_s": 59.92503899999997,
+      "available_history_span_s": 110.22899599999982,
+      "recovery_span_s": 100.03700299999991,
+      "source_blocked_intervals_s": [
+        [
+          2015.9817529999998,
+          2075.981753
+        ]
+      ],
+      "unavailable_index_runs": [
+        [
+          1087,
+          1687
+        ]
+      ],
+      "n_unavailable": 600,
+      "metric_scope": "outage_only",
+      "n_common": 2688,
+      "mask_uint8_sha256": "4f34e8d92654f4db91151dabf1fca1c766b9ecc507dab76928cbaee378224c20",
+      "generator_seed": 0,
+      "rng_used": false
+    },
+    {
+      "scenario_id": "val_e3_d10s",
+      "split": "validation",
+      "episode_id": 3,
+      "requested_duration_s": 10,
+      "target_onset_s": 2055.97100625,
+      "onset_s": 2055.997753,
+      "requested_cutoff_s": 2065.997753,
+      "last_unavailable_s": 2065.903754,
+      "first_link_available_after_s": 2066.003758,
+      "observed_mask_interval_s": 10.006004999999732,
+      "unavailable_sample_span_s": 9.906000999999833,
+      "available_history_span_s": 150.24499600000013,
+      "recovery_span_s": 110.0399980000002,
+      "source_blocked_intervals_s": [
+        [
+          2055.997753,
+          2065.997753
+        ]
+      ],
+      "unavailable_index_runs": [
+        [
+          1487,
+          1587
+        ]
+      ],
+      "n_unavailable": 100,
+      "metric_scope": "outage_only",
+      "n_common": 2688,
+      "mask_uint8_sha256": "0074eb8d8dc7bc8e4228c9480866b762e70819a1287206fa3700ff486e693957",
+      "generator_seed": 0,
+      "rng_used": false
+    },
+    {
+      "scenario_id": "val_e3_d30s",
+      "split": "validation",
+      "episode_id": 3,
+      "requested_duration_s": 30,
+      "target_onset_s": 2055.97100625,
+      "onset_s": 2055.997753,
+      "requested_cutoff_s": 2085.997753,
+      "last_unavailable_s": 2085.910765,
+      "first_link_available_after_s": 2086.010757,
+      "observed_mask_interval_s": 30.01300399999991,
+      "unavailable_sample_span_s": 29.91301199999998,
+      "available_history_span_s": 150.24499600000013,
+      "recovery_span_s": 90.03299900000002,
+      "source_blocked_intervals_s": [
+        [
+          2055.997753,
+          2085.997753
+        ]
+      ],
+      "unavailable_index_runs": [
+        [
+          1487,
+          1787
+        ]
+      ],
+      "n_unavailable": 300,
+      "metric_scope": "outage_only",
+      "n_common": 2688,
+      "mask_uint8_sha256": "c42dd6904e081422b95fc0d90f246f1dfddf40104196dc8094da0e0c6cb7178d",
+      "generator_seed": 0,
+      "rng_used": false
+    },
+    {
+      "scenario_id": "val_e3_d60s",
+      "split": "validation",
+      "episode_id": 3,
+      "requested_duration_s": 60,
+      "target_onset_s": 2055.97100625,
+      "onset_s": 2055.997753,
+      "requested_cutoff_s": 2115.997753,
+      "last_unavailable_s": 2115.9237519999997,
+      "first_link_available_after_s": 2116.023753,
+      "observed_mask_interval_s": 60.02599999999984,
+      "unavailable_sample_span_s": 59.92599899999959,
+      "available_history_span_s": 150.24499600000013,
+      "recovery_span_s": 60.02000300000009,
+      "source_blocked_intervals_s": [
+        [
+          2055.997753,
+          2115.997753
+        ]
+      ],
+      "unavailable_index_runs": [
+        [
+          1487,
+          2087
+        ]
+      ],
+      "n_unavailable": 600,
+      "metric_scope": "outage_only",
+      "n_common": 2688,
+      "mask_uint8_sha256": "a6662edb1addc52e5cd4647169edf53c5742e2106643354ecb051cd3a83ee997",
+      "generator_seed": 0,
+      "rng_used": false
+    }
+  ],
+  "common_timestamps_float64_le_sha256": "65f65ce416cd8b5a2b4d4e89fefb8b81cea2da9ecf5149d38e4c637eb5d1b110",
+  "mask_comparison": "same fixed timestamps/availability as diagnostic v1; GNSS preprocessing and causal model/target change; not directly comparable to R7 as an isolated architecture effect",
+  "planned_training_runs": 3,
+  "planned_neural_seeds": 1,
+  "test_split_used": false,
+  "training_executed": false
+}

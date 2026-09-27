@@ -1,0 +1,694 @@
+{
+  "source": "https://www.aau.at/en/smart-systems-technologies/control-of-networked-systems/datasets/insane-dataset/",
+  "license": "metadata/LICENSE.txt",
+  "calibration": "calibration/insane_sensor_calib_preprocessed/sensor_calibration.yaml",
+  "author_tools_commit": "9a1c8c0fdd195f2d869fff292f2ce5b273c5a03d",
+  "sequences": {
+    "mars_1": {
+      "sequence": "mars_1",
+      "calibration_set": "MA",
+      "url": "https://cns-data.aau.at/insane-dataset/mars_1_sensors.zip",
+      "retrieved_utc": "2026-09-26T21:18:20.314113+00:00",
+      "archive_bytes": 7924101,
+      "archive_etag": "\"78e985-5eb5e7e29790c\"",
+      "http_bytes_received": 1234297,
+      "archive_members": [
+        "mars_1_sensors/",
+        "mars_1_sensors/LICENSE",
+        "mars_1_sensors/README.txt",
+        "mars_1_sensors/ground_truth/",
+        "mars_1_sensors/ground_truth/README.txt",
+        "mars_1_sensors/ground_truth/ground_truth_80hz.csv",
+        "mars_1_sensors/ground_truth/ground_truth_8hz.csv",
+        "mars_1_sensors/ground_truth/px4_imu_data.csv",
+        "mars_1_sensors/ground_truth/px4_mag_data_revised.csv",
+        "mars_1_sensors/ground_truth/rtk_gps1_data_revised.csv",
+        "mars_1_sensors/ground_truth/rtk_gps2_data_revised.csv",
+        "mars_1_sensors/lrf_range.csv",
+        "mars_1_sensors/lsm_imu.csv",
+        "mars_1_sensors/lsm_mag.csv",
+        "mars_1_sensors/px4_baro.csv",
+        "mars_1_sensors/px4_gps.csv",
+        "mars_1_sensors/px4_gps_vel_data.csv",
+        "mars_1_sensors/px4_imu.csv",
+        "mars_1_sensors/px4_mag.csv",
+        "mars_1_sensors/rs_imu.csv",
+        "mars_1_sensors/rs_odom.csv",
+        "mars_1_sensors/rtk_gps1.csv",
+        "mars_1_sensors/rtk_gps2.csv",
+        "mars_1_sensors/time_info.yaml"
+      ],
+      "files": [
+        {
+          "path": "mars_1/px4_imu.csv",
+          "bytes": 2775124,
+          "sha256": "3167b9b3fc8ed5ef37d66e7a843adc26712d55a3c5effa891c8249bf8fd523c2",
+          "archive_member": "mars_1_sensors/px4_imu.csv"
+        },
+        {
+          "path": "mars_1/px4_gps.csv",
+          "bytes": 92751,
+          "sha256": "95903a27fb8033b18ab1cbcf886ba7719de392fa28dfd686d162e6ac04e20237",
+          "archive_member": "mars_1_sensors/px4_gps.csv"
+        },
+        {
+          "path": "mars_1/ground_truth_8hz.csv",
+          "bytes": 67338,
+          "sha256": "aed52b0df3aa45503eb4576e2579312014cbc9d5b4522b7b8540f21bf443cdec",
+          "archive_member": "mars_1_sensors/ground_truth/ground_truth_8hz.csv"
+        },
+        {
+          "path": "mars_1/archive_metadata/mars_1_sensors/README.txt",
+          "bytes": 1599,
+          "sha256": "b00c8ffe9fb2a6763c1c2e1e9b97e44e1ba05f238fe9f1c769a7941c99a364d1",
+          "archive_member": "mars_1_sensors/README.txt"
+        },
+        {
+          "path": "mars_1/archive_metadata/mars_1_sensors/ground_truth/README.txt",
+          "bytes": 433,
+          "sha256": "4d4e53c5da1f7aced7a76ad31192ed562bb0db10b73743b0f9df7facfd161beb",
+          "archive_member": "mars_1_sensors/ground_truth/README.txt"
+        },
+        {
+          "path": "mars_1/archive_metadata/mars_1_sensors/time_info.yaml",
+          "bytes": 239,
+          "sha256": "f21c0eb96c1ef50dfb3688db7be625937b3c1c33dd50bab2e41df7f7bab86bae",
+          "archive_member": "mars_1_sensors/time_info.yaml"
+        }
+      ]
+    },
+    "mars_2": {
+      "sequence": "mars_2",
+      "calibration_set": "MA",
+      "url": "https://cns-data.aau.at/insane-dataset/mars_2_sensors.zip",
+      "retrieved_utc": "2026-09-26T21:18:28.676082+00:00",
+      "archive_bytes": 25667151,
+      "archive_etag": "\"187a64f-5eb5e841fb2ca\"",
+      "http_bytes_received": 2023527,
+      "archive_members": [
+        "mars_2_sensors/",
+        "mars_2_sensors/LICENSE",
+        "mars_2_sensors/README.txt",
+        "mars_2_sensors/ground_truth/",
+        "mars_2_sensors/ground_truth/README.txt",
+        "mars_2_sensors/ground_truth/ground_truth_80hz.csv",
+        "mars_2_sensors/ground_truth/ground_truth_8hz.csv",
+        "mars_2_sensors/ground_truth/px4_imu_data.csv",
+        "mars_2_sensors/ground_truth/px4_mag_data_revised.csv",
+        "mars_2_sensors/ground_truth/rtk_gps1_data_revised.csv",
+        "mars_2_sensors/ground_truth/rtk_gps2_data_revised.csv",
+        "mars_2_sensors/lrf_range.csv",
+        "mars_2_sensors/lsm_imu.csv",
+        "mars_2_sensors/lsm_mag.csv",
+        "mars_2_sensors/px4_baro.csv",
+        "mars_2_sensors/px4_gps.csv",
+        "mars_2_sensors/px4_gps_vel_data.csv",
+        "mars_2_sensors/px4_imu.csv",
+        "mars_2_sensors/px4_mag.csv",
+        "mars_2_sensors/rs_imu.csv",
+        "mars_2_sensors/rs_odom.csv",
+        "mars_2_sensors/rtk_gps1.csv",
+        "mars_2_sensors/rtk_gps2.csv",
+        "mars_2_sensors/time_info.yaml"
+      ],
+      "files": [
+        {
+          "path": "mars_2/px4_imu.csv",
+          "bytes": 4576685,
+          "sha256": "3da3a5ce72a6d147725d42c71385a3c59d91205c94f3d3ddea16c8928ae91366",
+          "archive_member": "mars_2_sensors/px4_imu.csv"
+        },
+        {
+          "path": "mars_2/px4_gps.csv",
+          "bytes": 149450,
+          "sha256": "88ee9f64d09defec60e45e2c9cf40a2eb94b485fc9ab7398945ca2f408d9b8c8",
+          "archive_member": "mars_2_sensors/px4_gps.csv"
+        },
+        {
+          "path": "mars_2/ground_truth_8hz.csv",
+          "bytes": 108347,
+          "sha256": "e8aaa874b6f4833e0ab2352651a42ed290b6dcdc105ec871fd12740b1b986126",
+          "archive_member": "mars_2_sensors/ground_truth/ground_truth_8hz.csv"
+        },
+        {
+          "path": "mars_2/archive_metadata/mars_2_sensors/README.txt",
+          "bytes": 1620,
+          "sha256": "483e48455d5544c1fc633a2a18b0c360253eb962f319a4f9229353067d301ec7",
+          "archive_member": "mars_2_sensors/README.txt"
+        },
+        {
+          "path": "mars_2/archive_metadata/mars_2_sensors/ground_truth/README.txt",
+          "bytes": 436,
+          "sha256": "7493d7864f02a1b4c0fb39bac8e15bfce558535ace05189846dc362b7d31764c",
+          "archive_member": "mars_2_sensors/ground_truth/README.txt"
+        },
+        {
+          "path": "mars_2/archive_metadata/mars_2_sensors/time_info.yaml",
+          "bytes": 240,
+          "sha256": "c4bf868cfe1c30f7eca78a09dbc076aaada83ddad40ae8a2200900c4739ca671",
+          "archive_member": "mars_2_sensors/time_info.yaml"
+        }
+      ]
+    },
+    "mars_3": {
+      "sequence": "mars_3",
+      "calibration_set": "MA",
+      "url": "https://cns-data.aau.at/insane-dataset/mars_3_sensors.zip",
+      "retrieved_utc": "2026-09-26T21:18:36.844837+00:00",
+      "archive_bytes": 11511010,
+      "archive_etag": "\"afa4e2-5eb5fa033deff\"",
+      "http_bytes_received": 1863724,
+      "archive_members": [
+        "mars_3_sensors/",
+        "mars_3_sensors/LICENSE",
+        "mars_3_sensors/README.txt",
+        "mars_3_sensors/ground_truth/",
+        "mars_3_sensors/ground_truth/README.txt",
+        "mars_3_sensors/ground_truth/ground_truth_80hz.csv",
+        "mars_3_sensors/ground_truth/ground_truth_8hz.csv",
+        "mars_3_sensors/ground_truth/outdoor_gt.csv",
+        "mars_3_sensors/ground_truth/outdoor_gt_interpolate.csv",
+        "mars_3_sensors/ground_truth/px4_imu_data.csv",
+        "mars_3_sensors/ground_truth/px4_mag_data_revised.csv",
+        "mars_3_sensors/ground_truth/rtk_gps1_data_revised.csv",
+        "mars_3_sensors/ground_truth/rtk_gps2_data_revised.csv",
+        "mars_3_sensors/ground_truth/time_offset.yaml",
+        "mars_3_sensors/lrf_range.csv",
+        "mars_3_sensors/lsm_imu.csv",
+        "mars_3_sensors/lsm_mag.csv",
+        "mars_3_sensors/px4_baro.csv",
+        "mars_3_sensors/px4_gps.csv",
+        "mars_3_sensors/px4_gps_vel_data.csv",
+        "mars_3_sensors/px4_imu.csv",
+        "mars_3_sensors/px4_mag.csv",
+        "mars_3_sensors/rs_imu.csv",
+        "mars_3_sensors/rs_odom.csv",
+        "mars_3_sensors/rtk_gps1.csv",
+        "mars_3_sensors/rtk_gps2.csv",
+        "mars_3_sensors/time_info.yaml"
+      ],
+      "files": [
+        {
+          "path": "mars_3/px4_imu.csv",
+          "bytes": 4222129,
+          "sha256": "785cea7a614773d444f5c595cacd86954590a237dc902bd9b58ccf2fc2fc3989",
+          "archive_member": "mars_3_sensors/px4_imu.csv"
+        },
+        {
+          "path": "mars_3/px4_gps.csv",
+          "bytes": 131597,
+          "sha256": "f4b87c2f2dbeafb15bac5a599c2f56404da32980336dd9757a503eee9b8b77ac",
+          "archive_member": "mars_3_sensors/px4_gps.csv"
+        },
+        {
+          "path": "mars_3/ground_truth_8hz.csv",
+          "bytes": 91821,
+          "sha256": "7d8b0a399a79a45146c797d1d619881ac13f6b8d5eea21d7a6568b64a3504c8c",
+          "archive_member": "mars_3_sensors/ground_truth/ground_truth_8hz.csv"
+        },
+        {
+          "path": "mars_3/archive_metadata/mars_3_sensors/README.txt",
+          "bytes": 1606,
+          "sha256": "7229dcc17940964c26339ab993707ccb103e0d1a36edda605806f86e084ebe0f",
+          "archive_member": "mars_3_sensors/README.txt"
+        },
+        {
+          "path": "mars_3/archive_metadata/mars_3_sensors/ground_truth/README.txt",
+          "bytes": 436,
+          "sha256": "fad672fb9910da7fe11cc495aa9ff8c02834f68a31beecb70592f8959f7ee051",
+          "archive_member": "mars_3_sensors/ground_truth/README.txt"
+        },
+        {
+          "path": "mars_3/archive_metadata/mars_3_sensors/time_info.yaml",
+          "bytes": 240,
+          "sha256": "63110bf1da5b3fa26f4f359f34ba37d3d4535047019876d134acc1077992bbb3",
+          "archive_member": "mars_3_sensors/time_info.yaml"
+        }
+      ]
+    },
+    "mars_4": {
+      "sequence": "mars_4",
+      "calibration_set": "MA",
+      "url": "https://cns-data.aau.at/insane-dataset/mars_4_sensors.zip",
+      "retrieved_utc": "2026-09-26T21:18:45.881047+00:00",
+      "archive_bytes": 35820714,
+      "archive_etag": "\"22294aa-5eb5fa9e95030\"",
+      "http_bytes_received": 2114554,
+      "archive_members": [
+        "mars_4_sensors/",
+        "mars_4_sensors/LICENSE",
+        "mars_4_sensors/README.txt",
+        "mars_4_sensors/ground_truth/",
+        "mars_4_sensors/ground_truth/README.txt",
+        "mars_4_sensors/ground_truth/ground_truth_80hz.csv",
+        "mars_4_sensors/ground_truth/ground_truth_8hz.csv",
+        "mars_4_sensors/ground_truth/px4_imu_data.csv",
+        "mars_4_sensors/ground_truth/px4_mag_data_revised.csv",
+        "mars_4_sensors/ground_truth/rtk_gps1_data_revised.csv",
+        "mars_4_sensors/ground_truth/rtk_gps2_data_revised.csv",
+        "mars_4_sensors/lrf_range.csv",
+        "mars_4_sensors/lrf_range_data.csv",
+        "mars_4_sensors/lsm9ds1_imu_data.csv",
+        "mars_4_sensors/lsm9ds1_mag_data.csv",
+        "mars_4_sensors/lsm_imu.csv",
+        "mars_4_sensors/lsm_mag.csv",
+        "mars_4_sensors/px4_baro.csv",
+        "mars_4_sensors/px4_baro_data.csv",
+        "mars_4_sensors/px4_gps.csv",
+        "mars_4_sensors/px4_gps_data.csv",
+        "mars_4_sensors/px4_gps_vel_data.csv",
+        "mars_4_sensors/px4_imu.csv",
+        "mars_4_sensors/px4_imu_data.csv",
+        "mars_4_sensors/px4_mag.csv",
+        "mars_4_sensors/px4_mag_data.csv",
+        "mars_4_sensors/rs_imu.csv",
+        "mars_4_sensors/rs_imu_data.csv",
+        "mars_4_sensors/rs_odom.csv",
+        "mars_4_sensors/rs_odom_data.csv",
+        "mars_4_sensors/rtk_gps1.csv",
+        "mars_4_sensors/rtk_gps1_data.csv",
+        "mars_4_sensors/rtk_gps2.csv",
+        "mars_4_sensors/rtk_gps2_data.csv",
+        "mars_4_sensors/time_info.yaml"
+      ],
+      "files": [
+        {
+          "path": "mars_4/px4_imu.csv",
+          "bytes": 4771130,
+          "sha256": "fc329f9010d892e54bd1b3dde98826ad84e1d1de24cd86bc576cbffbca93e83c",
+          "archive_member": "mars_4_sensors/px4_imu.csv"
+        },
+        {
+          "path": "mars_4/px4_gps.csv",
+          "bytes": 158195,
+          "sha256": "e59e75d35f47c575188a2bce6e31b06eed8d86fba2d6c3a7e47986efa577abcd",
+          "archive_member": "mars_4_sensors/px4_gps.csv"
+        },
+        {
+          "path": "mars_4/ground_truth_8hz.csv",
+          "bytes": 114363,
+          "sha256": "9f491575c53060344b5391a6d2729c787aeebc5a62abc71eb409235e919a0955",
+          "archive_member": "mars_4_sensors/ground_truth/ground_truth_8hz.csv"
+        },
+        {
+          "path": "mars_4/archive_metadata/mars_4_sensors/README.txt",
+          "bytes": 1620,
+          "sha256": "192f1eab16cbc6ac1485eab154b7f42492d4fcd43a26ba62f983873e375bba0d",
+          "archive_member": "mars_4_sensors/README.txt"
+        },
+        {
+          "path": "mars_4/archive_metadata/mars_4_sensors/ground_truth/README.txt",
+          "bytes": 436,
+          "sha256": "b25125fbb1e9c7262d1d0eb402b7d938edca3dc76f439f735541f6bab5e6bf39",
+          "archive_member": "mars_4_sensors/ground_truth/README.txt"
+        },
+        {
+          "path": "mars_4/archive_metadata/mars_4_sensors/time_info.yaml",
+          "bytes": 240,
+          "sha256": "862c18680b83e8de64a9b79683656f8a9b115073fb3e20daa527bb858f17115b",
+          "archive_member": "mars_4_sensors/time_info.yaml"
+        }
+      ]
+    },
+    "mars_5": {
+      "sequence": "mars_5",
+      "calibration_set": "MA",
+      "url": "https://cns-data.aau.at/insane-dataset/mars_5_sensors.zip",
+      "retrieved_utc": "2026-09-26T21:18:53.964281+00:00",
+      "archive_bytes": 6755008,
+      "archive_etag": "\"6712c0-5eb5facdfc9a1\"",
+      "http_bytes_received": 1145249,
+      "archive_members": [
+        "mars_5_sensors/",
+        "mars_5_sensors/LICENSE",
+        "mars_5_sensors/README.txt",
+        "mars_5_sensors/ground_truth/",
+        "mars_5_sensors/ground_truth/README.txt",
+        "mars_5_sensors/ground_truth/ground_truth_80hz.csv",
+        "mars_5_sensors/ground_truth/ground_truth_8hz.csv",
+        "mars_5_sensors/ground_truth/px4_imu_data.csv",
+        "mars_5_sensors/ground_truth/px4_mag_data_revised.csv",
+        "mars_5_sensors/ground_truth/rtk_gps1_data_revised.csv",
+        "mars_5_sensors/ground_truth/rtk_gps2_data_revised.csv",
+        "mars_5_sensors/lrf_range.csv",
+        "mars_5_sensors/lsm_imu.csv",
+        "mars_5_sensors/lsm_mag.csv",
+        "mars_5_sensors/px4_baro.csv",
+        "mars_5_sensors/px4_gps.csv",
+        "mars_5_sensors/px4_gps_vel_data.csv",
+        "mars_5_sensors/px4_imu.csv",
+        "mars_5_sensors/px4_mag.csv",
+        "mars_5_sensors/rs_imu.csv",
+        "mars_5_sensors/rtk_gps1.csv",
+        "mars_5_sensors/rtk_gps2.csv",
+        "mars_5_sensors/time_info.yaml"
+      ],
+      "files": [
+        {
+          "path": "mars_5/px4_imu.csv",
+          "bytes": 2616975,
+          "sha256": "23f3c2ea5cd88027c795d92de67878fccdb09b7da122064f6342bbee72d41e2e",
+          "archive_member": "mars_5_sensors/px4_imu.csv"
+        },
+        {
+          "path": "mars_5/px4_gps.csv",
+          "bytes": 85259,
+          "sha256": "780a543b9286a464e394c1e108bff2cac168d483a66f0ed66350f2107db0b1c8",
+          "archive_member": "mars_5_sensors/px4_gps.csv"
+        },
+        {
+          "path": "mars_5/ground_truth_8hz.csv",
+          "bytes": 56942,
+          "sha256": "ab13987b88c9554eeb14ce32c773cf151f127ba49d2738f1c5bb4b8df4342798",
+          "archive_member": "mars_5_sensors/ground_truth/ground_truth_8hz.csv"
+        },
+        {
+          "path": "mars_5/archive_metadata/mars_5_sensors/README.txt",
+          "bytes": 1500,
+          "sha256": "3b95469bf352f032793c3f00cdad1a6b6a09a2a44f6cf5052d5d4483d1efe7a8",
+          "archive_member": "mars_5_sensors/README.txt"
+        },
+        {
+          "path": "mars_5/archive_metadata/mars_5_sensors/ground_truth/README.txt",
+          "bytes": 433,
+          "sha256": "abccb09a07dd4676e1b742ac9f3b0d0cfdcf7d373d00f00e99695672b32bf1ed",
+          "archive_member": "mars_5_sensors/ground_truth/README.txt"
+        },
+        {
+          "path": "mars_5/archive_metadata/mars_5_sensors/time_info.yaml",
+          "bytes": 239,
+          "sha256": "dfbee02a70e947c096fd8d7c78330e2462558d5001ca67d34a7b16f99108fa89",
+          "archive_member": "mars_5_sensors/time_info.yaml"
+        }
+      ]
+    },
+    "mars_6": {
+      "sequence": "mars_6",
+      "calibration_set": "MA",
+      "url": "https://cns-data.aau.at/insane-dataset/mars_6_sensors.zip",
+      "retrieved_utc": "2026-09-26T21:19:02.502117+00:00",
+      "archive_bytes": 6763964,
+      "archive_etag": "\"6735bc-5eb5fadc5662d\"",
+      "http_bytes_received": 1154462,
+      "archive_members": [
+        "mars_6_sensors/",
+        "mars_6_sensors/LICENSE",
+        "mars_6_sensors/README.txt",
+        "mars_6_sensors/ground_truth/",
+        "mars_6_sensors/ground_truth/README.txt",
+        "mars_6_sensors/ground_truth/ground_truth_80hz.csv",
+        "mars_6_sensors/ground_truth/ground_truth_8hz.csv",
+        "mars_6_sensors/ground_truth/px4_imu_data.csv",
+        "mars_6_sensors/ground_truth/px4_mag_data_revised.csv",
+        "mars_6_sensors/ground_truth/rtk_gps1_data_revised.csv",
+        "mars_6_sensors/ground_truth/rtk_gps2_data_revised.csv",
+        "mars_6_sensors/lrf_range.csv",
+        "mars_6_sensors/lsm_imu.csv",
+        "mars_6_sensors/lsm_mag.csv",
+        "mars_6_sensors/px4_baro.csv",
+        "mars_6_sensors/px4_gps.csv",
+        "mars_6_sensors/px4_gps_vel_data.csv",
+        "mars_6_sensors/px4_imu.csv",
+        "mars_6_sensors/px4_mag.csv",
+        "mars_6_sensors/rtk_gps1.csv",
+        "mars_6_sensors/rtk_gps2.csv",
+        "mars_6_sensors/time_info.yaml"
+      ],
+      "files": [
+        {
+          "path": "mars_6/px4_imu.csv",
+          "bytes": 2611811,
+          "sha256": "250df50f10fa9c5312467eff1936102ca3ce0ca40689ab74507c31261948006d",
+          "archive_member": "mars_6_sensors/px4_imu.csv"
+        },
+        {
+          "path": "mars_6/px4_gps.csv",
+          "bytes": 84864,
+          "sha256": "e01ff6a7728958efc43d87909f4654d57f7aa02dbc473df3283d01b7472c00c3",
+          "archive_member": "mars_6_sensors/px4_gps.csv"
+        },
+        {
+          "path": "mars_6/ground_truth_8hz.csv",
+          "bytes": 64130,
+          "sha256": "0a8af9361df1fcaa8f26eeb04ede387adc2f9daf161ee44ddeba6aeeee9e643f",
+          "archive_member": "mars_6_sensors/ground_truth/ground_truth_8hz.csv"
+        },
+        {
+          "path": "mars_6/archive_metadata/mars_6_sensors/README.txt",
+          "bytes": 1393,
+          "sha256": "ecfd4620cc28c41b855023da449666c070f324220cf134c2367e2b004f1b3ffa",
+          "archive_member": "mars_6_sensors/README.txt"
+        },
+        {
+          "path": "mars_6/archive_metadata/mars_6_sensors/ground_truth/README.txt",
+          "bytes": 433,
+          "sha256": "b8a936ab0d1d2bdb4b278fc1442dd4747decf1feebb9de77b8012e61d5509890",
+          "archive_member": "mars_6_sensors/ground_truth/README.txt"
+        },
+        {
+          "path": "mars_6/archive_metadata/mars_6_sensors/time_info.yaml",
+          "bytes": 239,
+          "sha256": "c4ac7c4ee2e2840d20ab6f4df461f125406cba2e3161e65ce264f7a5df26e9dd",
+          "archive_member": "mars_6_sensors/time_info.yaml"
+        }
+      ]
+    },
+    "mars_7": {
+      "sequence": "mars_7",
+      "calibration_set": "MA",
+      "url": "https://cns-data.aau.at/insane-dataset/mars_7_sensors.zip",
+      "retrieved_utc": "2026-09-26T21:19:10.584389+00:00",
+      "archive_bytes": 6710161,
+      "archive_etag": "\"666391-5eb5fb3012a2f\"",
+      "http_bytes_received": 1230137,
+      "archive_members": [
+        "mars_7_sensors/",
+        "mars_7_sensors/LICENSE",
+        "mars_7_sensors/README.txt",
+        "mars_7_sensors/ground_truth/",
+        "mars_7_sensors/ground_truth/README.txt",
+        "mars_7_sensors/ground_truth/ground_truth_80hz.csv",
+        "mars_7_sensors/ground_truth/ground_truth_8hz.csv",
+        "mars_7_sensors/ground_truth/px4_imu_data.csv",
+        "mars_7_sensors/ground_truth/px4_mag_data_revised.csv",
+        "mars_7_sensors/ground_truth/rtk_gps1_data_revised.csv",
+        "mars_7_sensors/ground_truth/rtk_gps2_data_revised.csv",
+        "mars_7_sensors/lrf_range.csv",
+        "mars_7_sensors/lsm_imu.csv",
+        "mars_7_sensors/lsm_mag.csv",
+        "mars_7_sensors/px4_baro.csv",
+        "mars_7_sensors/px4_gps.csv",
+        "mars_7_sensors/px4_gps_vel_data.csv",
+        "mars_7_sensors/px4_imu.csv",
+        "mars_7_sensors/px4_mag.csv",
+        "mars_7_sensors/rs_imu.csv",
+        "mars_7_sensors/rtk_gps1.csv",
+        "mars_7_sensors/rtk_gps2.csv",
+        "mars_7_sensors/time_info.yaml"
+      ],
+      "files": [
+        {
+          "path": "mars_7/px4_imu.csv",
+          "bytes": 2768334,
+          "sha256": "fda18c7e539d156bab617c95be1fde051ce54b8ba159f3c2470119773e914d6a",
+          "archive_member": "mars_7_sensors/px4_imu.csv"
+        },
+        {
+          "path": "mars_7/px4_gps.csv",
+          "bytes": 90952,
+          "sha256": "aed66055034757fdae713b1530224d327f3a13410cbd88e9fba700ec1561fc5a",
+          "archive_member": "mars_7_sensors/px4_gps.csv"
+        },
+        {
+          "path": "mars_7/ground_truth_8hz.csv",
+          "bytes": 64394,
+          "sha256": "919b13d506f3ee1d9640155b11174ce9a27cbf142f53125b6ae61227ec477ea8",
+          "archive_member": "mars_7_sensors/ground_truth/ground_truth_8hz.csv"
+        },
+        {
+          "path": "mars_7/archive_metadata/mars_7_sensors/README.txt",
+          "bytes": 1499,
+          "sha256": "6533ba3f5f3b7923942ebfc3bf2a35153338d08af56969bac8630e9c617e43f6",
+          "archive_member": "mars_7_sensors/README.txt"
+        },
+        {
+          "path": "mars_7/archive_metadata/mars_7_sensors/ground_truth/README.txt",
+          "bytes": 433,
+          "sha256": "cc40a9e4294c9df9d38cea40793c2cf708af779eb744245a2ace4192f9b31260",
+          "archive_member": "mars_7_sensors/ground_truth/README.txt"
+        },
+        {
+          "path": "mars_7/archive_metadata/mars_7_sensors/time_info.yaml",
+          "bytes": 239,
+          "sha256": "18fc7adf3c26408d05a4f80039158a312f0f0f3088b0e8cf22de478f7adacd1a",
+          "archive_member": "mars_7_sensors/time_info.yaml"
+        }
+      ]
+    },
+    "outdoor_1": {
+      "sequence": "outdoor_1",
+      "calibration_set": "KLU1",
+      "url": "https://cns-data.aau.at/insane-dataset/outdoor_1_sensors.zip",
+      "retrieved_utc": "2026-09-26T21:17:54.824912+00:00",
+      "archive_bytes": 18586950,
+      "archive_etag": "\"11b9d46-5eb5e04d63c70\"",
+      "http_bytes_received": 3161079,
+      "archive_members": [
+        "outdoor_1_sensors/",
+        "outdoor_1_sensors/LICENSE",
+        "outdoor_1_sensors/README.txt",
+        "outdoor_1_sensors/ground_truth/",
+        "outdoor_1_sensors/ground_truth/README.txt",
+        "outdoor_1_sensors/ground_truth/ground_truth_80hz.csv",
+        "outdoor_1_sensors/ground_truth/ground_truth_8hz.csv",
+        "outdoor_1_sensors/ground_truth/px4_imu_data.csv",
+        "outdoor_1_sensors/ground_truth/px4_mag_data_revised.csv",
+        "outdoor_1_sensors/ground_truth/rtk_gps1_data_revised.csv",
+        "outdoor_1_sensors/ground_truth/rtk_gps2_data_revised.csv",
+        "outdoor_1_sensors/lrf_range.csv",
+        "outdoor_1_sensors/lsm_imu.csv",
+        "outdoor_1_sensors/lsm_mag.csv",
+        "outdoor_1_sensors/px4_baro.csv",
+        "outdoor_1_sensors/px4_gps.csv",
+        "outdoor_1_sensors/px4_gps_vel_data.csv",
+        "outdoor_1_sensors/px4_imu.csv",
+        "outdoor_1_sensors/px4_mag.csv",
+        "outdoor_1_sensors/px4_rpm.csv",
+        "outdoor_1_sensors/rs_imu.csv",
+        "outdoor_1_sensors/rs_odom.csv",
+        "outdoor_1_sensors/rtk_gps1.csv",
+        "outdoor_1_sensors/rtk_gps2.csv",
+        "outdoor_1_sensors/time_info.yaml",
+        "outdoor_1_sensors/uwb_range.csv"
+      ],
+      "files": [
+        {
+          "path": "outdoor_1/px4_imu.csv",
+          "bytes": 7340539,
+          "sha256": "443991ebfc292ef7c235b47ba902535977ef29c36f12db28ba8930de2afd23f3",
+          "archive_member": "outdoor_1_sensors/px4_imu.csv"
+        },
+        {
+          "path": "outdoor_1/px4_gps.csv",
+          "bytes": 229771,
+          "sha256": "5fa34ad2d2d1cb32d751f4a4212ad92a86b17147458439a9e173a278d6ff30fd",
+          "archive_member": "outdoor_1_sensors/px4_gps.csv"
+        },
+        {
+          "path": "outdoor_1/ground_truth_8hz.csv",
+          "bytes": 137381,
+          "sha256": "eaec9108dff9888d73ba6c8afd03444f31bb0168c0890ec6559e13d3ff607ec7",
+          "archive_member": "outdoor_1_sensors/ground_truth/ground_truth_8hz.csv"
+        },
+        {
+          "path": "outdoor_1/archive_metadata/outdoor_1_sensors/README.txt",
+          "bytes": 1868,
+          "sha256": "3cf6381d1489663b17db76c8599aacfbabf09fb06e353b0d5118a9eec70fd6a5",
+          "archive_member": "outdoor_1_sensors/README.txt"
+        },
+        {
+          "path": "outdoor_1/archive_metadata/outdoor_1_sensors/ground_truth/README.txt",
+          "bytes": 436,
+          "sha256": "c9104d95fcf66535148a1174b577ae81d7b37247609ae8f64a62fcb22b7f3c47",
+          "archive_member": "outdoor_1_sensors/ground_truth/README.txt"
+        },
+        {
+          "path": "outdoor_1/archive_metadata/outdoor_1_sensors/time_info.yaml",
+          "bytes": 252,
+          "sha256": "ee16a127ae88622dd301309f53f8694b09383658a94d33a8d1772247749a1aea",
+          "archive_member": "outdoor_1_sensors/time_info.yaml"
+        }
+      ]
+    }
+  },
+  "support_files": {
+    "calibration/source.zip": {
+      "bytes": 9458,
+      "sha256": "cff4fbd099051cf0ff29838f7ab4bc67ff35d70cc6555029e537ca1036c215f2"
+    },
+    "calibration/insane_sensor_calib_preprocessed/LICENSE": {
+      "bytes": 2675,
+      "sha256": "effb36636d7fed3d0898ddde0c2179056728cdea1d91e448745d508daaf44632"
+    },
+    "calibration/insane_sensor_calib_preprocessed/mag_calibration_klu.yaml": {
+      "bytes": 1820,
+      "sha256": "195844768b861295b12580bdc2cf392e8557f877524dc3b4ae1f71b9ecc10faa"
+    },
+    "calibration/insane_sensor_calib_preprocessed/camera_calibration_klu2.yaml": {
+      "bytes": 2932,
+      "sha256": "f5ef855b5877240f06c5be8bd67d4fc969a89687e3bf31f31f71614ee58af634"
+    },
+    "calibration/insane_sensor_calib_preprocessed/sensor_calibration.yaml": {
+      "bytes": 2353,
+      "sha256": "5d390c7465e8fd4388748a2c81f0b70bb83c4600ee5f7cd220fdd41c2649976a"
+    },
+    "calibration/insane_sensor_calib_preprocessed/camera_calibration_klu1.yaml": {
+      "bytes": 2928,
+      "sha256": "dc00c4071137460ea76287a757997fd1f2e277f2b2e2b320d410ac8571a4904a"
+    },
+    "calibration/insane_sensor_calib_preprocessed/mag_calibration_mars.yaml": {
+      "bytes": 1831,
+      "sha256": "c2e46e7eea8cfb5faf8d527a30207b4f04ac87600eef6d90853873b3ac504040"
+    },
+    "calibration/insane_sensor_calib_preprocessed/camera_calibration_mars.yaml": {
+      "bytes": 2911,
+      "sha256": "70d5641ed1341da3d6bb0ae8742da77059938bde2c8815c128b0825ff545a91b"
+    },
+    "metadata/author_tools/LICENSE": {
+      "bytes": 2681,
+      "sha256": "69249100f1b292d0abc99224c3f7afd1d69e627d667f007627c8a0b2e7c4db30"
+    },
+    "metadata/author_tools/README.md": {
+      "bytes": 21282,
+      "sha256": "209f2356eea808d77f228728e52af630be6ec0515f666798ffb572495409473b"
+    },
+    "metadata/author_tools/tools/gps_conversion/gps_init_ref.m": {
+      "bytes": 549,
+      "sha256": "2bec7be9d688c19dbab2bb096fb24fdbe9dfe7ea82d14f377e972d4777c406a6"
+    },
+    "metadata/author_tools/tools/gps_conversion/wgs84ToEnu.m": {
+      "bytes": 197,
+      "sha256": "35cc13bee44066521c64ade9ce491744f2deeec647f98f7d43cab5e5296db3dc"
+    },
+    "metadata/author_tools/tools/gps_conversion/wgs84ToECEF.m": {
+      "bytes": 592,
+      "sha256": "88cc678486ae3217b6d108156d838a45a996d6e47a433d2120e31a536f0c62fa"
+    },
+    "metadata/author_tools/tools/gps_conversion/ECEFToENU.m": {
+      "bytes": 130,
+      "sha256": "408a23c496de1503f2df5dc24a773cdf0d3d3393657c3e977d278d2cd4dcdee7"
+    },
+    "metadata/author_tools/tools/time_alignment/time_reg.m": {
+      "bytes": 1679,
+      "sha256": "3b8b5a2f488e667dbbf05d267b6b48c8fe15181853b6e305d543a2ed41117589"
+    },
+    "metadata/author_tools/tools/time_alignment/smooth_time.m": {
+      "bytes": 587,
+      "sha256": "060798ecf4874e07be3d02d3206517b6edce0b940150a233b0b7da0af4d7b6b3"
+    },
+    "metadata/author_tools/post_scripts/csv2bag.py": {
+      "bytes": 19314,
+      "sha256": "301b93bbff55d394d36fe384d092c1a114c07c6314c8da66c1e34f93d4ddcd14"
+    },
+    "metadata/author_tools/data_extraction/extract_data.m": {
+      "bytes": 62070,
+      "sha256": "eda2ff07201d8d767d499b9753423581286e28d1365503a4f3d6bca9ab1a1e15"
+    },
+    "metadata/author_tools/data_extraction/gps_mag_orientation.m": {
+      "bytes": 32008,
+      "sha256": "b49b571dc19cef5fee85bc12c4b6dca88a8659fa588f19adcdfdf70fd54ca96b"
+    },
+    "metadata/author_tools/ros_topic_tools/read_imu_sensor_msgs.m": {
+      "bytes": 1905,
+      "sha256": "ef671f99e84ac4413499872045dffaa1477f444256c99a41026973e821980d4e"
+    },
+    "metadata/author_tools/ros_topic_tools/read_gps_navsat.m": {
+      "bytes": 1894,
+      "sha256": "fc071d21253a49c8a482e0d415bc059c0558fe5872c072ce221a7d664a662389"
+    },
+    "metadata/LICENSE.txt": {
+      "bytes": 2670,
+      "sha256": "3ee421e00a0d3f9f5e61aaa80fa0a6905dedf025765d219e2e322f11b26923a6"
+    }
+  }
+}

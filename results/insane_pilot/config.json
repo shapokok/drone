@@ -1,0 +1,53 @@
+{
+  "pilot_id": "fusionnav_insane_pilot_v1",
+  "seed": 0,
+  "methods": [
+    "full",
+    "gps_only"
+  ],
+  "max_epochs": 30,
+  "patience": 5,
+  "min_delta_m": 0.0,
+  "validation_criterion": "macro mean episode relative-motion RMSE3D on fixed validation outages",
+  "batch_size": 4,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "huber_delta_m": 1.0,
+  "hidden": 32,
+  "token_period_s": 0.05,
+  "imu_gap_limit_s": 0.1,
+  "gps_gap_limit_s": 1.0,
+  "gt_gap_limit_s": 2.0,
+  "history_s": 20.0,
+  "recovery_s": 10.0,
+  "duration_s": [
+    10,
+    30,
+    60
+  ],
+  "validation_onset_stride_s": 60.0,
+  "train_episodes_per_flight_duration_epoch": 2,
+  "cv_history_s": 5.0,
+  "normalization": "IMU dt-weighted mean/std on train flights only; delta/velocity fixed /5; cov standard deviation /10",
+  "imu_frame": "published PX4 MAVROS body axes, ROS FLU; never rotate using GT",
+  "position_frame": "published local ENU, common per-flight first ordinary GNSS origin",
+  "gt_point": "PX4 IMU origin, authors dual RTK plus magnetometer reference",
+  "gnss_point": "ordinary GNSS antenna; its lever arm to PX4 IMU is absent from supplied calibration",
+  "eskf": {
+    "real_data_ready": false,
+    "blockers": [
+      "ordinary GNSS antenna to PX4 IMU lever arm not supplied",
+      "absolute initial yaw unavailable from permitted sensors without validated dynamic alignment"
+    ],
+    "sigma_accel_density": 0.1,
+    "sigma_gyro_density": 0.01,
+    "sigma_accel_bias_walk": 0.001,
+    "sigma_gyro_bias_walk": 0.0001,
+    "noise_status": "engineering defaults for synthetic mechanization checks only; not tuned or asserted flight calibration",
+    "gnss_lever_arm_body_m": null,
+    "parameter_tuning": "none"
+  },
+  "test_used": false,
+  "extra_seeds": false
+}

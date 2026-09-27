@@ -1,0 +1,8 @@
+{
+  "status": "not_ready",
+  "blockers": [
+    "ordinary GNSS antenna to PX4 IMU lever arm not supplied",
+    "absolute initial yaw unavailable from permitted sensors without validated dynamic alignment"
+  ],
+  "evaluated": false
+}

@@ -1,0 +1,162 @@
+{
+  "protocol_id": "r7_val_clean_outages_v1",
+  "description": "Locked validation diagnostic; no training, tuning or online-navigation claim.",
+  "r7": {
+    "kernel": "shapok/drone-nav-full-run",
+    "version": 7,
+    "output_id": 352644733,
+    "commit": "766575a07886e335c1d6cac664c5e140550942aa",
+    "url": "https://www.kaggle.com/code/shapok/drone-nav-full-run?scriptVersionId=352644733",
+    "artifacts": {
+      "drone/data/processed/t_imu.npy": {
+        "bytes": 216528,
+        "sha256": "6a97d036b4410ea133f9a61aad3f12f01b88d40f250d0fe10019a72a0a721df1"
+      },
+      "drone/data/processed/imu.npy": {
+        "bytes": 649328,
+        "sha256": "295b5a275fda83f64ff41265976a2076c7fdafb2de21b59131d8187ceae67855"
+      },
+      "drone/data/processed/t_gps.npy": {
+        "bytes": 649480,
+        "sha256": "d81130c811695894788cce9264d58f059f3cb0824f4867cfb25786095f8b9f63"
+      },
+      "drone/data/processed/gps_pos.npy": {
+        "bytes": 974156,
+        "sha256": "1db0dfb6108e590fdab6ad813eda642639e6d88a4ae6a576b45715a540649df7"
+      },
+      "drone/data/processed/t_gt.npy": {
+        "bytes": 21776,
+        "sha256": "db7063ed5333bd418de5c28fa155292b2966113dcf152610458b883303168562"
+      },
+      "drone/data/processed/gt_pos.npy": {
+        "bytes": 32600,
+        "sha256": "acb513c194a22ba9080e140506e325cfdc9446730439a70edf922e061af5ee6d"
+      },
+      "drone/data/processed/meta.json": {
+        "bytes": 343,
+        "sha256": "e498ca75f30575372f2b77a767486455aaa1c869a1e6ef54e67d4fa0ec221603"
+      },
+      "outputs/checkpoints/fusion_transformer_full_s0_outage0.0.pt": {
+        "bytes": 5332123,
+        "sha256": "8adacc2e7c16ed7d828ba4d49fab87dda10eeb908026b23f839d974a82a8140f"
+      },
+      "outputs/checkpoints/fusion_transformer_gps_only_s0_outage0.0.pt": {
+        "bytes": 5332375,
+        "sha256": "f2ad679aa5b797bf882e4e192ed910b1cf329795600960eeaae5ef1122bcd177"
+      },
+      "outputs/checkpoints/fusion_lstm_full_s0_outage0.0.pt": {
+        "bytes": 1780545,
+        "sha256": "e8b47d6109e521f5ddd938867dd91fa1086eb93f590deb7c714047ffe87383a5"
+      }
+    },
+    "model_source_sha256": {
+      "src/models/fusion_transformer.py": "c1c6172c1cc803640970c1a4b52963953db831634522fcc7c77eca8bb951e8e5",
+      "src/models/fusion_lstm.py": "a374b21d4601e9af9fad6186ae365a519e6132a613f25e9dbb800208a555171e"
+    }
+  },
+  "split": {
+    "name": "validation",
+    "train_fraction": 0.7,
+    "val_fraction": 0.1,
+    "expected_total_imu": 27050,
+    "expected_original_indices": [
+      18935,
+      21640
+    ],
+    "expected_common_indices": [
+      18935,
+      21623
+    ]
+  },
+  "window": 192,
+  "protocol": {
+    "durations_s": [
+      10,
+      30,
+      60
+    ],
+    "start_fractions": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "warmup_s": 30,
+    "recovery_s": 20,
+    "generator_seed": 0,
+    "rng_used": false,
+    "interval": "[onset, onset + duration)",
+    "start_rule": "fractions of [common_first + warmup, common_last - recovery - max_duration], snap forward to first timestamp"
+  },
+  "constant_velocity": {
+    "history_s": 5,
+    "min_span_s": 1,
+    "fit": "unweighted least squares per XYZ over unique accepted source timestamps",
+    "fallback": "zero velocity if fewer than two source timestamps or span < 1 s",
+    "anchor": "last accepted pre-onset position, extrapolation starts at its source timestamp"
+  },
+  "inference": {
+    "seed": 0,
+    "batch_windows": 1,
+    "device": "auto",
+    "allow_tf32": false,
+    "checkpoint_loading": "weights_only=True; strict=True",
+    "transformer_semantics": "noncausal window model; no added causal masks",
+    "window_state": "reset each window; no GT initialization"
+  },
+  "methods": [
+    {
+      "id": "held_gnss",
+      "kind": "baseline"
+    },
+    {
+      "id": "constant_velocity_gnss",
+      "kind": "baseline"
+    },
+    {
+      "id": "fusion_full",
+      "kind": "saved_model",
+      "architecture": "fusion_transformer",
+      "ablation": "full",
+      "seed": 0,
+      "checkpoint": "outputs/checkpoints/fusion_transformer_full_s0_outage0.0.pt"
+    },
+    {
+      "id": "fusion_gps_only",
+      "kind": "separately_trained_ablation",
+      "architecture": "fusion_transformer",
+      "ablation": "gps_only",
+      "seed": 0,
+      "checkpoint": "outputs/checkpoints/fusion_transformer_gps_only_s0_outage0.0.pt"
+    },
+    {
+      "id": "fusion_lstm",
+      "kind": "saved_model",
+      "architecture": "fusion_lstm",
+      "ablation": "full",
+      "seed": 0,
+      "checkpoint": "outputs/checkpoints/fusion_lstm_full_s0_outage0.0.pt"
+    },
+    {
+      "id": "fusion_full_zero_imu",
+      "kind": "fixed_checkpoint_input_sensitivity",
+      "architecture": "fusion_transformer",
+      "ablation": "full",
+      "seed": 0,
+      "checkpoint": "outputs/checkpoints/fusion_transformer_full_s0_outage0.0.pt",
+      "zero_imu": true
+    }
+  ],
+  "metrics": {
+    "alignment": "none",
+    "outage_scope": "mask=False samples only",
+    "control_scope": "entire common trace",
+    "averaging": "uniform per evaluated timestamp, not time-weighted",
+    "horizontal_axes": [
+      0,
+      1
+    ],
+    "vertical_axis": 2,
+    "units": "m in existing project coordinates; coordinate agreement unresolved",
+    "aggregation": "one row per method/scenario/seed; no seed or flight dispersion"
+  }
+}

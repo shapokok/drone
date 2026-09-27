@@ -1,0 +1,12 @@
+{
+  "status": "not_ready",
+  "synthetic_mechanization": "tested separately",
+  "blockers": [
+    "ordinary GNSS antenna to PX4 IMU lever arm not supplied",
+    "absolute initial yaw unavailable from permitted sensors without validated dynamic alignment"
+  ],
+  "real_metrics_allowed": false,
+  "no_gt_initialization": true,
+  "no_course_as_yaw": true,
+  "parameter_tuning": "none"
+}

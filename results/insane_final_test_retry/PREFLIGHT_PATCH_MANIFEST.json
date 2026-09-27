@@ -1,0 +1,27 @@
+{
+  "authorization": "One user-authorized retry of final test after preflight repair; no protocol changes",
+  "prior_failed_run_id": "353128919",
+  "original_lock_sha256": "05a0f7a9fff31929b0f08cb0aa63efdf3835eced96df09822e28976b42fd5841",
+  "original_test_manifest_sha256": "9d729572c4ba9f3c87484d6b60e4b77c8b996975e7d9a6b7bee4e001b2e4f7fd",
+  "patch_source_sha256": {
+    "src/insane_final_test_patch/__init__.py": "2dfd426b50ffda1ae631247af3f9aa452aa1831e9642e92cf4cfab4fac46e460",
+    "src/insane_final_test_patch/comparison.py": "4f71aaf01e74d0432b2163874a13a8231041cdf69cc0ea46f8a894f11822e1b3",
+    "src/insane_final_test_patch/preflight.py": "029c39f530d58d08e7bd683a038982e1550ce3981f3f912bf0a5aa6ab7167895",
+    "tests/insane_final_test_patch/test_manifest_comparison.py": "b69bffb2adaa4daec76ce8627d9b2b8f480d7deb91c3db9a54d85e148e5e795d"
+  },
+  "scope": "Runtime replacement of run.preflight only; all original locked scientific source files byte-identical",
+  "tolerance": {
+    "field": "inventory/{mars_6,mars_7}/projection_error_m",
+    "atol_m": 1e-08,
+    "rtol": 0.0
+  },
+  "strict_fields": "every other manifest field, all source/input/checkpoint/config/scaler hashes",
+  "unchanged_checkpoint_sha256": {
+    "adaptive_full_seed0_best.pt": "809320603d17d43ddafcbceff7f03a0119d6b5fbab708da82eac68f7704c22d7",
+    "adaptive_full_seed1_best.pt": "629d499c3aa4492c6f98822bc67dc6981e15762ca16a1fad538886b018cbf878",
+    "adaptive_full_seed2_best.pt": "722c373f3de2a3614bb589a6acaba322ba33f4716f683f2f018170ced075462e",
+    "adaptive_gps_only_seed0_best.pt": "b5aba59e4f23d5e171ea7945b5eb3af0944b854f5a60a9f437d3e5855589e502",
+    "adaptive_gps_only_seed1_best.pt": "559e7f75aaf80c998b50002290de221fce2884a3f1f687cc2cd610b23d25e4cb",
+    "adaptive_gps_only_seed2_best.pt": "1d076de9c154223b8a112e405b0c5c0c98fa14bd72bb5def3e49140dd41ae9b3"
+  }
+}

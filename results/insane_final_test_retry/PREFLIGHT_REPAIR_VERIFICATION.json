@@ -1,0 +1,59 @@
+{
+  "prior_failed_run": "353128919",
+  "original_lock_unchanged": true,
+  "only_changed_runtime_component": "preflight manifest comparison",
+  "remote_manifest_diffs": [
+    {
+      "check": "check_01",
+      "fields_differing": [
+        {
+          "path": "/inventory/mars_6/projection_error_m",
+          "expected": 1.116003289780565e-09,
+          "actual": 1.1160175006352802e-09,
+          "comparison": "diagnostic_inventory_numeric",
+          "absolute_difference": 1.4210854715202004e-14,
+          "atol": 1e-08,
+          "rtol": 0.0,
+          "accepted": true
+        },
+        {
+          "path": "/inventory/mars_7/projection_error_m",
+          "expected": 1.1317560222323664e-09,
+          "actual": 1.116038816917353e-09,
+          "comparison": "diagnostic_inventory_numeric",
+          "absolute_difference": 1.5717205315013416e-11,
+          "atol": 1e-08,
+          "rtol": 0.0,
+          "accepted": true
+        }
+      ],
+      "hash_checks_passed": 99
+    },
+    {
+      "check": "check_02",
+      "fields_differing": [
+        {
+          "path": "/inventory/mars_6/projection_error_m",
+          "expected": 1.116003289780565e-09,
+          "actual": 1.1160175006352802e-09,
+          "comparison": "diagnostic_inventory_numeric",
+          "absolute_difference": 1.4210854715202004e-14,
+          "atol": 1e-08,
+          "rtol": 0.0,
+          "accepted": true
+        },
+        {
+          "path": "/inventory/mars_7/projection_error_m",
+          "expected": 1.1317560222323664e-09,
+          "actual": 1.116038816917353e-09,
+          "comparison": "diagnostic_inventory_numeric",
+          "absolute_difference": 1.5717205315013416e-11,
+          "atol": 1e-08,
+          "rtol": 0.0,
+          "accepted": true
+        }
+      ],
+      "hash_checks_passed": 99
+    }
+  ]
+}
